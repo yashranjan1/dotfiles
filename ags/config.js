@@ -1,64 +1,36 @@
-const hyprland = await Service.import("hyprland")
-
-function Workspaces() {
-    const activeId = hyprland.active.workspace.bind("id")
-    const workspaces = hyprland.bind("workspaces")
-        .as(ws => ws.map(({ id }) => Widget.Button({
-            on_clicked: () => hyprland.messageAsync(`dispatch workspace ${id}`),
-            class_name: activeId.as(i => `${i === id ? "focused" : "not-focused"}`),
-            name: 'button'
-        }
-    )))
-
-    return Widget.Box({
-        class_name: "workspaces",
-        children: workspaces,
-    })
-}
-
-function LogoMenu(){
-    return Widget.Icon({ icon: 'archlinux-logo', name: 'logo'})
-}
+import { logo_menu, workspaces, date_widget, power, control_center, control_center_button } from './elements.js';
 
 function Left() {
     return Widget.Box({
         spacing: 8,
         children: [
-            LogoMenu(),
-            Workspaces()
+            logo_menu(),
+            workspaces()
         ],
     })
 }
 
 function Center(){
-    return Widget.Label({
-        class_name: 'date'
-    })
-    .poll(1000, label => label.label = Utils.exec('date +"%H:%M - %a %d %B %Y"'))
-}
-
-function Power(){
-    return Widget.Button({
-        on_clicked: () => {},
-        class_name: 'power-menu',
-        child: Widget.Icon('system-shutdown-symbolic')
+    return Widget.Box({
+        children: [
+            date_widget()
+        ]
     })
 }
 
-function Right(){
+function Right(monitor){
     return Widget.Box({
         hpack: "end",
+        spacing: 8,
         children: [
-            Power()
+            control_center_button(monitor),
+            power(),
         ],
         class_name: 'right'
     })
 }
 
 function Bar(monitor = 0) {
-    const myLabel = Widget.Label({
-        label: 'some example content',
-    })
 
     return Widget.Window({
         monitor,
@@ -67,17 +39,30 @@ function Bar(monitor = 0) {
         child: Widget.CenterBox({
             start_widget: Left(),
             center_widget: Center(),
-            end_widget: Right(),
+            end_widget: Right(monitor),
             name: 'window_box'
         }),
+    })
+}
+
+function ControlCenter(monitor = 0){
+    return Widget.Window({
+        monitor,
+        name: `control_center${monitor}`,
+        anchor: ['top', 'right'],
+        child: control_center(),
+        margins: [60, 62, 0, 0],
+        visible: false
     })
 }
 
 
 App.config({
     windows: [
-        Bar(0), // can be instantiated for each monitor
+        Bar(0), 
         Bar(1),
+        ControlCenter(0),
+        ControlCenter(1)
     ],
     style:'./styles.css'
 })

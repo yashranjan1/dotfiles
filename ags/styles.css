@@ -3,6 +3,10 @@
     border-top-width: 10px;
 }
 
+#control_center1, #control_center2{
+    background-color: transparent;
+}
+
 #window_box {
     margin: 10px 17px;
     padding: 5px;
@@ -32,7 +36,7 @@
     margin: 10px 5px;
 }
 
-#logo{
+.logo{
     padding: 0 2px 0 15px;
     font-size: 20px;
 }
@@ -47,8 +51,7 @@
     padding-right: 15px;
 }
 
-.power-menu{
-    color: #aa0e57;
+.button{
     padding: 0;
     font-size: 17px;
     background-color: transparent;
@@ -58,4 +61,88 @@
     text-shadow: none;
     -gtk-icon-shadow: 0 0 0;
     font-weight: bolder;
+}
+
+.invisible {
+    opacity: 0;
+}
+
+.activated-icon{
+    color: #000000;
+}
+
+.activated-box{
+    background-color: #ffffff;
+}
+
+
+.power-menu{
+    color: #aa0e57;
+}
+.control-center{
+    border-radius: 10px;
+    padding: 0px 7px 0px 10px;
+}
+.control-center-button{
+    color: #fff;
+}
+.control-center-menu{
+    border-radius: 10px;
+    background-color: #000000;
+    padding: 20px;
+}
+
+.user-card{
+    color: #ffffff;
+    font-family: 'JetBrainsMono Nerd Font';
+}
+
+.avatar {
+    font-size: 40px;
+}
+
+.top-opts{
+    color: #ffffff;
+    font-size: 25px;
+}
+
+.opts-box{
+    background-color: #151515;
+    padding: 8px 10px;
+    border-radius: 5px;
+    background-image: none;
+    box-shadow: none;
+    border-color: transparent;
+    color: #ffffff;
+}
+
+.vol-ctl{
+    padding: 12px 14px;
+    color: #ffffff;
+    background-color: #151515;
+    border-radius: 10px;
+}
+
+.vol-level{
+    padding: 0 5px;
+    border-radius: 50px;
+    background-color: transparent;
+    font-size: 0px;
+    min-width: 250px;
+    min-height: 20px;
+}
+.vol-level trough {
+    border-radius: 50px; 
+    background-color: #fff; 
+    /* -gtk-outline-left: 0px; */
+    min-height: 10px;
+}
+
+.vol-level trough highlight {
+    background-color: #6f6feb;
+    border-radius: 50px; 
+}
+
+.vol-level trough slider {
+    all:unset
 }
