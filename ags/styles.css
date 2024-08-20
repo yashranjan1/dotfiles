@@ -1,9 +1,9 @@
-#bar1, #bar0 {
+#bar0, #bar1 {
     background-color: transparent;
     border-top-width: 10px;
 }
 
-#control_center1, #control_center2{
+#control_center0, #control_center1{
     background-color: transparent;
 }
 
@@ -43,7 +43,7 @@
 
 .date{
     color: #fff;
-    font-family: "JetBrainsMono Nerd Font";
+    /* font-family: "c"; */
     font-weight: bold;
 }
 
@@ -94,7 +94,8 @@
 
 .user-card{
     color: #ffffff;
-    font-family: 'JetBrainsMono Nerd Font';
+    /* font-family: 'JetBrainsMono Nerd Font'; */
+    font-weight: 900;
 }
 
 .avatar {
@@ -116,33 +117,36 @@
     color: #ffffff;
 }
 
-.vol-ctl{
-    padding: 12px 14px;
+.media-section{
     color: #ffffff;
     background-color: #151515;
     border-radius: 10px;
+    padding: 6px 12px 6px 14px;
 }
 
 .vol-level{
-    padding: 0 5px;
+    /* padding: 0 5px; */
     border-radius: 50px;
     background-color: transparent;
     font-size: 0px;
-    min-width: 250px;
-    min-height: 20px;
+    min-height: 10px;
 }
 .vol-level trough {
     border-radius: 50px; 
     background-color: #fff; 
-    /* -gtk-outline-left: 0px; */
-    min-height: 10px;
+    min-height: 5px;
 }
 
 .vol-level trough highlight {
     background-color: #6f6feb;
-    border-radius: 50px; 
+
 }
 
 .vol-level trough slider {
-    all:unset
+    all:unset;
 }
+
+
+/* .media-section [
+
+] */

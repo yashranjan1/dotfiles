@@ -1,4 +1,4 @@
-import { logo_menu, workspaces, date_widget, power, control_center, control_center_button } from './elements.js';
+import { logo_menu, workspaces, date_widget, power, ControlCenter, ControlCenterButton } from './elements.js';
 
 function Left() {
     return Widget.Box({
@@ -23,7 +23,7 @@ function Right(monitor){
         hpack: "end",
         spacing: 8,
         children: [
-            control_center_button(monitor),
+            ControlCenterButton(monitor),
             power(),
         ],
         class_name: 'right'
@@ -45,12 +45,12 @@ function Bar(monitor = 0) {
     })
 }
 
-function ControlCenter(monitor = 0){
+function ControlCenterWindow(monitor = 0){
     return Widget.Window({
         monitor,
         name: `control_center${monitor}`,
         anchor: ['top', 'right'],
-        child: control_center(),
+        child: ControlCenter(),
         margins: [60, 62, 0, 0],
         visible: false
     })
@@ -61,8 +61,8 @@ App.config({
     windows: [
         Bar(0), 
         Bar(1),
-        ControlCenter(0),
-        ControlCenter(1)
+        ControlCenterWindow(0),
+        ControlCenterWindow(1)
     ],
     style:'./styles.css'
 })

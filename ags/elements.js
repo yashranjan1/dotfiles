@@ -1,4 +1,17 @@
 const hyprland = await Service.import("hyprland")
+const audio = await Service.import("audio")
+
+// Variables
+export const uptime = Variable(0, {
+    poll: [60_000, "cat /proc/uptime", line =>
+        Number.parseInt(line.split(".")[0]) / 60,
+    ],
+})
+function up(up) {
+    const h = Math.floor(up / 60)
+    const m = Math.floor(up % 60)
+    return `${h}h ${m < 10 ? "0" + m : m}m`
+}
 
 const workspaces = () => {
     const activeId = hyprland.active.workspace.bind("id")
@@ -22,7 +35,7 @@ const logo_menu = () => {
 
 const power = () => {
     return Widget.Button({
-        on_clicked: () => {},
+        on_clicked: () => {console.log(audio)},
         class_name: 'power-menu button',
         child: Widget.Icon('system-shutdown-symbolic')
     })
@@ -35,7 +48,7 @@ const date_widget = () => {
     .poll(1000, label => label.label = Utils.exec('date +"%H:%M - %a %d %B %Y"'))
 }
 
-const control_center_button = (monitor) => {
+const ControlCenterButton = (monitor) => {
 
     const button = Widget.Button({
         on_clicked: () => { 
@@ -69,31 +82,30 @@ const control_center_button = (monitor) => {
     )
 }
 
-const control_center = () =>{
+const ControlCenter = () =>{
     return Widget.Box({
         vertical: true,
         spacing: 10,
         children: [
-            top_cc(),
-            vol_ctl()
+            QuickMenu(),
+            Media()
         ],
         class_name: 'control-center-menu'
     })
 }
 
-const top_cc = () => {
+const QuickMenu = () => {
     return Widget.Box({
         spacing: 50,
         children: [
-            user_card(),
-            top_opts()
+            UserCard(),
+            QuickOptions()
         ]
     })
 }
 
-const user_card = () => {
+const UserCard = () => {
     const userName = Utils.exec('whoami')
-    const uptime = Utils.exec(`awk '{printf "%dh %dm\\n", $1/3600, ($1%3600)/60}' /proc/uptime`)
     return Widget.Box({
         spacing: 10,
         children: [
@@ -110,7 +122,7 @@ const user_card = () => {
                     }),
                     Widget.Label({
                         xalign: 0,
-                        label: uptime,
+                        label: uptime.bind().as(up),
                     }),
                 ],
             }),
@@ -120,7 +132,7 @@ const user_card = () => {
 
 }
 
-const top_opts = () => {
+const QuickOptions = () => {
     return Widget.Box({
         spacing: 8,
         children: [
@@ -144,20 +156,61 @@ const top_opts = () => {
     })
 }
 
-const vol_ctl = () => {
+const Media = () => {
     return Widget.Box({
+        vertical: true,
         spacing: 8,
         children: [
-            Widget.Icon('audio-speakers-symbolic'),
-            Widget.Slider({
-                value: 40,
-                class_name: 'vol-level',
-                max: 100,
-                min: 0
-            })
+            Volume(),
+            Microphone()
         ],
-        class_name: 'vol-ctl'
+        class_name: 'media-section'
     })
 }
 
-export { logo_menu, workspaces, power, date_widget, control_center, control_center_button }
+const Volume = () => {
+    return Widget.Box({
+        children: [
+            Widget.Icon({ icon: 'audio-speakers-symbolic', css: 'font-size:16px'}),
+            Widget.Slider({
+                on_change: ({ value, dragging }) => {
+                    if (dragging) {
+                        audio["speaker"].volume = value
+                        audio["speaker"].is_muted = false
+                    }
+                },
+                value: audio["speaker"].bind("volume"),
+                class_name: 'vol-level',
+                draw_value: false,
+                min: 0,
+                max: 1,
+                hexpand: true,
+            })
+        ]
+    })
+}
+
+const Microphone = () => {
+
+    return Widget.Box({
+        children: [
+            Widget.Icon({ icon: 'audio-input-microphone-symbolic', css: 'font-size:16px'}),
+            Widget.Slider({
+                on_change: ({ value, dragging }) => {
+                    if (dragging) {
+                        audio["microphone"].volume = value
+                        audio["microphone"].is_muted = false
+                    }
+                },
+                value: audio["microphone"].bind("volume"),
+                class_name: 'vol-level',
+                draw_value: false,
+                min: 0,
+                max: 1,
+                hexpand: true,
+            })
+        ],
+    })
+}
+
+export { logo_menu, workspaces, power, date_widget, ControlCenter, ControlCenterButton }
