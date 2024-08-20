@@ -1,5 +1,9 @@
 const hyprland = await Service.import("hyprland")
 const audio = await Service.import("audio")
+const network = await Service.import("network")
+
+
+
 
 // Variables
 export const uptime = Variable(0, {
@@ -13,7 +17,7 @@ function up(up) {
     return `${h}h ${m < 10 ? "0" + m : m}m`
 }
 
-const workspaces = () => {
+const Workspaces = () => {
     const activeId = hyprland.active.workspace.bind("id")
     const workspaces = hyprland.bind("workspaces")
         .as(ws => ws.map(({ id }) => Widget.Button({
@@ -29,19 +33,19 @@ const workspaces = () => {
     })
 }
 
-const logo_menu = () => {
+const Logo = () => {
     return Widget.Icon({ icon: 'archlinux-logo', class_name: 'logo'})
 }
 
-const power = () => {
+const PowerMenu = () => {
     return Widget.Button({
-        on_clicked: () => {console.log(audio)},
+        on_clicked: () => {console.log(icon)},
         class_name: 'power-menu button',
         child: Widget.Icon('system-shutdown-symbolic')
     })
 }
 
-const date_widget = () => {
+const DateWidget = () => {
     return Widget.Label({
         class_name: 'date'
     })
@@ -61,7 +65,6 @@ const ControlCenterButton = (monitor) => {
             box.toggleClassName('activated-box', button.activated)
             
             App.toggleWindow(`control_center${monitor}`)
-            App.getWindow
             
         },
         child: Widget.Box({
@@ -82,13 +85,15 @@ const ControlCenterButton = (monitor) => {
     )
 }
 
+
 const ControlCenter = () =>{
     return Widget.Box({
         vertical: true,
         spacing: 10,
         children: [
             QuickMenu(),
-            Media()
+            Media(),
+            ShortcutMenu(),
         ],
         class_name: 'control-center-menu'
     })
@@ -127,7 +132,8 @@ const UserCard = () => {
                 ],
             }),
         ],
-        class_name: 'user-card'
+        class_name: 'user-card',
+        hexpand: true
     })
 
 }
@@ -164,7 +170,7 @@ const Media = () => {
             Volume(),
             Microphone()
         ],
-        class_name: 'media-section'
+        class_name: 'section'
     })
 }
 
@@ -213,4 +219,77 @@ const Microphone = () => {
     })
 }
 
-export { logo_menu, workspaces, power, date_widget, ControlCenter, ControlCenterButton }
+const Row = (items=[], space=0) => {
+    return Widget.Box({
+        children: items,
+        spacing: space
+    })
+}
+
+const ShortcutMenu = () => {
+    return Widget.Box({
+        vertical: true,
+        children: [
+            Row(
+                [
+                    Wifi()
+                ], 
+                8
+            )
+        ],
+    })
+}
+
+const Wifi = () => {   
+
+    return Widget.Box({
+        children: [
+            Widget.Button({
+                setup: self => self.hook(network.wifi, () => {
+                    self.toggleClassName("active", network.wifi.icon_name != 'network-wireless-disabled-symbolic')
+                }),
+                on_clicked: ()=>{ {
+                    if (network.wifi.enabled){
+                        network.wifi.enabled = false
+                    }
+                    else {
+                        network.wifi.enabled = true
+                    }
+                    
+                } },
+                child: Widget.Box({
+                    spacing: 8,
+                    children: [
+                        Widget.Icon().hook(network.wifi, self => {
+                            self.icon = `${network.wifi.icon_name}`
+                        }, "changed"),
+                        Widget.Label({
+                            truncate: 'end'
+                        }).hook(network.wifi, self => {
+                            var ssid = network.wifi.ssid || "Not Connected"
+                            self.label = `${ssid}`
+                        }, "changed"),
+                    ]
+                }),
+                class_name: `shortcut-menu-item`,
+                cursor: 'pointer',
+                hexpand: true
+            }),
+            Widget.Button({
+                setup: self => self.hook(network.wifi, () => {
+                    self.toggleClassName("active", network.wifi.icon_name != 'network-wireless-disabled-symbolic')
+                }),
+                on_clicked: ()=>{},
+                child: Widget.Icon({
+                    icon: 'pan-end-symbolic'
+                }),
+                class_name: 'drop-down',
+                cursor: 'pointer'
+            }),
+        ],
+    })
+}
+
+
+    
+export { Logo, Workspaces, PowerMenu, DateWidget, ControlCenter, ControlCenterButton }

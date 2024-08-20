@@ -1,11 +1,11 @@
-import { logo_menu, workspaces, date_widget, power, ControlCenter, ControlCenterButton } from './elements.js';
+import { Logo, Workspaces, DateWidget, PowerMenu, ControlCenter, ControlCenterButton } from './elements.js';
 
 function Left() {
     return Widget.Box({
         spacing: 8,
         children: [
-            logo_menu(),
-            workspaces()
+            Logo(),
+            Workspaces()
         ],
     })
 }
@@ -13,7 +13,7 @@ function Left() {
 function Center(){
     return Widget.Box({
         children: [
-            date_widget()
+            DateWidget()
         ]
     })
 }
@@ -24,7 +24,7 @@ function Right(monitor){
         spacing: 8,
         children: [
             ControlCenterButton(monitor),
-            power(),
+            PowerMenu(),
         ],
         class_name: 'right'
     })
