@@ -1,0 +1,100 @@
+.control-center-window{
+    background-color: transparent;
+}
+
+.control-center{
+    border-radius: 10px;
+    padding: 0px 7px 0px 10px;
+}
+.control-center-button{
+    color: #fff;
+}
+.control-center-menu{
+    border-radius: 10px;
+    background-color: #000000;
+    padding: 20px;
+}
+
+.user-card{
+    color: #ffffff;
+    /* font-family: 'JetBrainsMono Nerd Font'; */
+    font-weight: 900;
+}
+
+.avatar {
+    font-size: 40px;
+}
+
+.top-opts{
+    color: #ffffff;
+    font-size: 25px;
+}
+
+.opts-box{
+    background-color: #151515;
+    padding: 8px 10px;
+    border-radius: 5px;
+    background-image: none;
+    box-shadow: none;
+    border-color: transparent;
+    color: #ffffff;
+}
+
+.section{
+    color: #ffffff;
+    background-color: #151515;
+    border-radius: 10px;
+    padding: 6px 12px 6px 14px;
+}
+
+.vol-level{
+    border-radius: 50px;
+    background-color: transparent;
+    font-size: 0px;
+    min-height: 10px;
+}
+.vol-level trough {
+    border-radius: 50px; 
+    background-color: #fff; 
+    min-height: 5px;
+}
+
+.vol-level trough highlight {
+    background-color: #6f6feb;
+
+}
+
+.vol-level trough slider {
+    all:unset;
+}
+
+.shortcut-menu-item {
+    border-radius: 5px 0 0 5px;
+    background-color: #151515;
+    background-image: none;
+    box-shadow: none;
+    border-color: transparent;
+    color: #fff;
+    padding: 7px 13px;
+    font-size: 16px;
+    font-weight: bolder;
+    min-width: 90px;
+}
+
+.drop-down{
+    border-radius: 0 5px 5px 0;
+    background-color: #151515;
+    background-image: none;
+    box-shadow: none;
+    border-color: transparent;
+    color: #fff;
+    padding: 7px;
+    font-size: 16px;
+}
+
+.active {
+    background-color: #6f6feb;
+    color: #000000;
+    -gtk-icon-shadow: 0 0 0;
+    text-shadow: 0 0 0;
+}

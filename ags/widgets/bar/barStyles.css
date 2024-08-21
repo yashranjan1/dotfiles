@@ -1,0 +1,83 @@
+.bar{
+    background-color: transparent;
+    border-top-width: 10px;
+}
+
+.bar-box {
+    margin: 10px 17px;
+    padding: 5px;
+    background-color: #000000;
+    border-radius: 40px;
+}
+
+.workspaces{
+    margin: 5px;
+}
+
+#workspace-tabs { 
+    min-height: 9px;
+    margin: 0 4px;
+    padding: 0;
+    background-image: none;
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.not-focused{
+    background-color: #adadad;
+    min-width: 9px;
+    border-radius: 50px;
+}
+.focused {
+    background-color: #6f6feb;
+    min-width: 25px;
+    border-radius: 3px;
+}
+
+#focused {
+    padding: 2px;
+}
+
+.workspace-container{
+    padding: 5px 0px;
+}
+
+.logo{
+    padding: 0 2px 0 15px;
+    font-size: 20px;
+    color: #6f6feb;
+}
+
+.date{
+    color: #fff;
+    /* font-family: "c"; */
+    font-weight: bold;
+}
+
+.right{
+    padding-right: 15px;
+}
+
+.activated-box{
+    background-color: #ffffff;
+}
+
+.button{
+    padding: 0;
+    font-size: 17px;
+    background-color: transparent;
+    background-image: none;
+    border-color: transparent;
+    box-shadow: none;
+    text-shadow: none;
+    -gtk-icon-shadow: 0 0 0;
+    font-weight: bolder;
+}
+
+.activated-icon{
+    color: #000000;
+}
+
+.power-menu{
+    color: #aa0e57;
+}

@@ -1,49 +1,6 @@
-import { Logo, Workspaces, DateWidget, PowerMenu, ControlCenter, ControlCenterButton } from './elements.js';
+import { Bar } from "./widgets/bar/Bar.js"
+import { ControlCenter } from "./widgets/controlcenter/ControlCenter.js"
 
-function Left() {
-    return Widget.Box({
-        spacing: 8,
-        children: [
-            Logo(),
-            Workspaces()
-        ],
-    })
-}
-
-function Center(){
-    return Widget.Box({
-        children: [
-            DateWidget()
-        ]
-    })
-}
-
-function Right(monitor){
-    return Widget.Box({
-        hpack: "end",
-        spacing: 8,
-        children: [
-            ControlCenterButton(monitor),
-            PowerMenu(),
-        ],
-        class_name: 'right'
-    })
-}
-
-function Bar(monitor = 0) {
-
-    return Widget.Window({
-        monitor,
-        name: `bar${monitor}`,
-        anchor: ['top', 'left', 'right'],
-        child: Widget.CenterBox({
-            start_widget: Left(),
-            center_widget: Center(),
-            end_widget: Right(monitor),
-            name: 'window_box'
-        }),
-    })
-}
 
 function ControlCenterWindow(monitor = 0){
     return Widget.Window({
@@ -52,7 +9,8 @@ function ControlCenterWindow(monitor = 0){
         anchor: ['top', 'right'],
         child: ControlCenter(),
         margins: [60, 62, 0, 0],
-        visible: false
+        visible: false,
+        class_name: 'control-center-window'
     })
 }
 
