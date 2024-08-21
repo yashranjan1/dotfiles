@@ -1,5 +1,6 @@
 import { Wifi } from "./Wifi.js"
 import { Row } from "../../../organisers/Row.js"
+import { Bluetooth } from "./Bluetooth.js"
 
 export const ShortcutMenu = () => {
     return Widget.Box({
@@ -7,7 +8,8 @@ export const ShortcutMenu = () => {
         children: [
             Row(
                 [
-                    Wifi()
+                    Wifi(),
+                    Bluetooth(),
                 ], 
                 8,
                 ''

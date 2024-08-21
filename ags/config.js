@@ -1,18 +1,5 @@
 import { Bar } from "./widgets/bar/Bar.js"
-import { ControlCenter } from "./widgets/controlcenter/ControlCenter.js"
-
-
-function ControlCenterWindow(monitor = 0){
-    return Widget.Window({
-        monitor,
-        name: `control_center${monitor}`,
-        anchor: ['top', 'right'],
-        child: ControlCenter(),
-        margins: [60, 62, 0, 0],
-        visible: false,
-        class_name: 'control-center-window'
-    })
-}
+import { ControlCenterWindow } from "./widgets/controlcenter/ControlCenter.js"
 
 
 App.config({
