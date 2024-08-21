@@ -18,8 +18,8 @@ export const DarkModeToggle = () => {
             cssVarGenerator('alt-bg', theme.value == 'dark' ? '#151515' : '#adadad') + 
             cssVarGenerator('inactive-ws', theme.value == 'dark' ? '#adadad' : '#151515')
             
-            Utils.writeFileSync(JSON.stringify(themeOutputJSON), '/home/yash/.config/ags/variables.json')
-            Utils.writeFileSync(themeOutputCSS, '/home/yash/.config/ags/theme.css')
+            Utils.writeFileSync(JSON.stringify(themeOutputJSON), '.config/ags/variables.json')
+            Utils.writeFileSync(themeOutputCSS, '.config/ags/theme.css')
 
             App.applyCss('.config/ags/styles.css', true)
         },
