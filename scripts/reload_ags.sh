@@ -4,7 +4,7 @@
 pkill ags
 
 # Wait a moment to ensure the application has closed
-sleep 2
+sleep 1
 
 # Reopen the AGS application
 nohup ags > /dev/null 2>&1 &

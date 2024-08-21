@@ -8,7 +8,7 @@ const ControlCenter = () =>{
         [
             QuickMenu(),
             Media(),
-            ShortcutMenu()
+            ShortcutMenu(),
         ],
         10, 
         'control-center-menu'

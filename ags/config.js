@@ -1,6 +1,11 @@
 import { Bar } from "./widgets/bar/Bar.js"
 import { ControlCenterWindow } from "./widgets/controlcenter/ControlCenter.js"
+import { theme } from "./variables/Theming.js"
 
+
+let vars = Utils.readFile('.config/ags/variables.json')
+vars = JSON.parse(vars)
+theme.setValue(vars.theme)
 
 App.config({
     windows: [

@@ -7,42 +7,42 @@
     padding: 0px 7px 0px 10px;
 }
 .control-center-button{
-    color: #fff;
+    color: @fg;
 }
 .control-center-menu{
     border-radius: 10px;
-    background-color: #000000;
+    background-color: @bg;
     padding: 20px;
 }
 
 .user-card{
-    color: #ffffff;
-    /* font-family: 'JetBrainsMono Nerd Font'; */
+    color: @fg;
     font-weight: 900;
 }
 
 .avatar {
+    color: @fg;
     font-size: 40px;
 }
 
 .top-opts{
-    color: #ffffff;
+    color: @fg;
     font-size: 25px;
 }
 
 .opts-box{
-    background-color: #151515;
+    background-color: @alt-bg;
     padding: 8px 10px;
     border-radius: 5px;
     background-image: none;
     box-shadow: none;
     border-color: transparent;
-    color: #ffffff;
+    color: @fg;
 }
 
 .section{
-    color: #ffffff;
-    background-color: #151515;
+    color: @fg;
+    background-color: @alt-bg;
     border-radius: 10px;
     padding: 6px 12px 6px 14px;
 }
@@ -55,12 +55,12 @@
 }
 .vol-level trough {
     border-radius: 50px; 
-    background-color: #fff; 
+    background-color: @fg; 
     min-height: 5px;
 }
 
 .vol-level trough highlight {
-    background-color: #6f6feb;
+    background-color: @accent;
 
 }
 
@@ -69,32 +69,30 @@
 }
 
 .shortcut-menu-item {
-    border-radius: 5px 0 0 5px;
-    background-color: #151515;
+    border-radius: 5px;
+    background-color: @alt-bg;
     background-image: none;
     box-shadow: none;
     border-color: transparent;
-    color: #fff;
+    color: @fg;
     padding: 7px 13px;
     font-size: 16px;
     font-weight: bolder;
+}
+
+.toggle-menu{
+    border-radius: 5px 0 0 5px;
     min-width: 90px;
 }
 
+
 .drop-down{
     border-radius: 0 5px 5px 0;
-    background-color: #151515;
-    background-image: none;
-    box-shadow: none;
-    border-color: transparent;
-    color: #fff;
-    padding: 7px;
-    font-size: 16px;
 }
 
 .active {
-    background-color: #6f6feb;
-    color: #000000;
+    background-color: @accent;
+    color: @bg;
     -gtk-icon-shadow: 0 0 0;
     text-shadow: 0 0 0;
 }

@@ -30,7 +30,7 @@ export const Wifi = () => {
                         }, "changed"),
                     ]
                 }),
-                class_name: `shortcut-menu-item`,
+                class_name: `shortcut-menu-item toggle-menu`,
                 cursor: 'pointer',
                 hexpand: true
             }),
@@ -42,7 +42,7 @@ export const Wifi = () => {
                 child: Widget.Icon({
                     icon: 'pan-end-symbolic'
                 }),
-                class_name: 'drop-down',
+                class_name: 'shortcut-menu-item drop-down',
                 cursor: 'pointer'
             }),
         ],

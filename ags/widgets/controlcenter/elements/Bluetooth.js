@@ -26,7 +26,7 @@ export const Bluetooth = () => {
                         }, 'changed'),
                     ]
                 }),
-                class_name: `shortcut-menu-item`,
+                class_name: `shortcut-menu-item toggle-menu`,
                 cursor: 'pointer',
                 hexpand: true
             }),,
@@ -38,7 +38,7 @@ export const Bluetooth = () => {
                 child: Widget.Icon({
                     icon: 'pan-end-symbolic'
                 }),
-                class_name: 'drop-down',
+                class_name: 'shortcut-menu-item drop-down',
                 cursor: 'pointer'
             }),
         ]

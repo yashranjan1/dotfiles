@@ -6,7 +6,7 @@
 .bar-box {
     margin: 10px 17px;
     padding: 5px;
-    background-color: #000000;
+    background-color: @bg;
     border-radius: 40px;
 }
 
@@ -24,12 +24,12 @@
 }
 
 .not-focused{
-    background-color: #adadad;
+    background-color: @inactive-ws;
     min-width: 9px;
     border-radius: 50px;
 }
 .focused {
-    background-color: #6f6feb;
+    background-color: @accent;
     min-width: 25px;
     border-radius: 3px;
 }
@@ -45,12 +45,11 @@
 .logo{
     padding: 0 2px 0 15px;
     font-size: 20px;
-    color: #6f6feb;
+    color: @accent;
 }
 
 .date{
-    color: #fff;
-    /* font-family: "c"; */
+    color: @fg;
     font-weight: bold;
 }
 
@@ -59,7 +58,7 @@
 }
 
 .activated-box{
-    background-color: #ffffff;
+    background-color: @fg;
 }
 
 .button{
@@ -75,7 +74,7 @@
 }
 
 .activated-icon{
-    color: #000000;
+    color: @bg;
 }
 
 .power-menu{
