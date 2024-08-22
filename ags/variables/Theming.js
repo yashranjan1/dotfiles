@@ -21,7 +21,7 @@ const colorValues = Variable({
     'Mint': '#98FB98',
     'Blue': '#A7C7E7',
     'Purple': '#6F6FEB',
-    'Violet': '#3F00FF'
+    'Violet': '#33015a'
 })
 
 export { theme, accentColors, colorValues, accent }

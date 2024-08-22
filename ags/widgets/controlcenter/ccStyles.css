@@ -78,8 +78,9 @@
     color: @fg;
     padding: 7px 13px;
     font-size: 16px;
-    font-weight: bolder;
+    font-weight: bold;
     min-width: 90px;
+    text-shadow: 0 0 0;
 }
 
 .toggle-menu{
@@ -111,6 +112,6 @@
 }
 
 .accent-label{
-    font-weight: bolder;
+    font-weight: bold;
     color: @fg;
 }
