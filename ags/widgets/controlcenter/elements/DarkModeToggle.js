@@ -1,16 +1,15 @@
 import { Row } from '../../../organisers/Row.js'
-import { theme } from '../../../variables/Theming.js'
+import { accent, theme } from '../../../variables/Theming.js'
+import { cssVarGenerator } from '../../../variables/HelperFunctions.js'
 
-function cssVarGenerator(name, value){
-    return `@define-color ${name} ${value};\n`
-}
 
 export const DarkModeToggle = () => {
     return Widget.Button({
         on_clicked: () => {
             theme.setValue(theme.value == 'dark' ? 'light' : 'dark')
             const themeOutputJSON = {
-                "theme": theme.value
+                "theme": theme.value,
+                "color": accent.value
             }
     
             let themeOutputCSS = cssVarGenerator('fg', theme.value == 'dark' ? '#fff' : '#000') + 

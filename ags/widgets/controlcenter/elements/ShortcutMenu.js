@@ -3,6 +3,7 @@ import { Row } from "../../../organisers/Row.js"
 import { Bluetooth } from "./Bluetooth.js"
 import { DarkModeToggle } from "./DarkModeToggle.js"
 import { Column } from "../../../organisers/Column.js"
+import { AccentChanger } from "./AccentChanger.js"
 
 export const ShortcutMenu = () => {
     return Column(
@@ -17,7 +18,8 @@ export const ShortcutMenu = () => {
                 ),
                 Row(
                     [
-                        DarkModeToggle()
+                        DarkModeToggle(),
+                        AccentChanger()
                     ],
                     8,
                     ''

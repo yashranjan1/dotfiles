@@ -52,6 +52,7 @@
     background-color: transparent;
     font-size: 0px;
     min-height: 10px;
+    -gtk-secondary-caret-color: transparent;
 }
 .vol-level trough {
     border-radius: 50px; 
@@ -61,7 +62,7 @@
 
 .vol-level trough highlight {
     background-color: @accent;
-
+    border: 0px;
 }
 
 .vol-level trough slider {
@@ -78,16 +79,16 @@
     padding: 7px 13px;
     font-size: 16px;
     font-weight: bolder;
+    min-width: 90px;
 }
 
 .toggle-menu{
     border-radius: 5px 0 0 5px;
-    min-width: 90px;
 }
-
 
 .drop-down{
     border-radius: 0 5px 5px 0;
+    min-width: 0;
 }
 
 .active {
@@ -95,4 +96,21 @@
     color: @bg;
     -gtk-icon-shadow: 0 0 0;
     text-shadow: 0 0 0;
+}
+
+.accent-icon {
+    padding: 0;
+    background-image: none;
+    border: 0;
+    -gtk-icon-shadow: 0 0 0;
+    text-shadow: 0 0 0;
+    box-shadow: none;
+    border-color: transparent;
+    min-width: 0;
+    color: @fg;
+}
+
+.accent-label{
+    font-weight: bolder;
+    color: @fg;
 }

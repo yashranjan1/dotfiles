@@ -1,11 +1,5 @@
 import { uptime } from "../../../variables/ControlCenter.js"
-
-function up(up) {
-    const h = Math.floor(up / 60)
-    const m = Math.floor(up % 60)
-    return `${h}h ${m < 10 ? "0" + m : m}m`
-}
-
+import { up } from "../../../variables/HelperFunctions.js"
 
 export const UserCard = () => {
     const userName = Utils.exec('whoami')
