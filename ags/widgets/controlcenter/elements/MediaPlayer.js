@@ -151,13 +151,12 @@ function Player(player) {
     )
 }
 
-
 export function MediaPlayer() {
     return Widget.Box({
         vertical: true,
         spacing: 8,
         class_name: 'media-player', // small hack to make it visible
         visible: players.as(p => p.length > 0),
-        children: players.as(p => p.map(Player)),
+        children:players.as(p => p.map(Player)),
     })
 }

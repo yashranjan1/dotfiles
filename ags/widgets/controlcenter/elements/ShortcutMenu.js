@@ -28,8 +28,4 @@ export const ShortcutMenu = () => {
         8,
         ''
     )
-    // Widget.Box({
-    //     vertical: true,
-    //     children: ,
-    // })
 }

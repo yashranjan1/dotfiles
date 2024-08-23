@@ -12,8 +12,7 @@
 .control-center-menu{
     border-radius: 10px;
     background-color: @bg;
-    /* box-shadow: 20px 20px 20px #000; */
-    padding: 20px;
+    padding: 20px 20px 6px 20px;
 }
 
 .user-card{
@@ -119,14 +118,14 @@
 .media-player {
     min-height: 2px; 
     min-width: 2px; 
-    background-color: @alt-bg;
-    border-radius: 9px;
-    padding: 2px;
 }
 
 .player {
-    padding: 10px;
+    padding: 12px;
     min-width: 350px;
+    background-color: @alt-bg;
+    border-radius: 9px;
+    margin-bottom: 12px;
 }
 
 .player .img {

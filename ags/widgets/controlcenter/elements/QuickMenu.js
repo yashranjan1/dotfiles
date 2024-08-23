@@ -1,14 +1,14 @@
 import { UserCard } from "./UserCard.js"
 import { QuickOptions } from "./QuickOptions.js"
-
-// use a row
+import { Row } from "../../../organisers/Row.js"
 
 export const QuickMenu = () => {
-    return Widget.Box({
-        spacing: 50,
-        children: [
+    return Row(
+        [
             UserCard(),
             QuickOptions()
-        ]
-    })
+        ],
+        0,
+        ''
+    )
 }

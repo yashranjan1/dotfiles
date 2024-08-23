@@ -10,6 +10,7 @@ export const QuickOptions = () => {
     
     const logout = Widget.Button({
         child: Widget.Icon('system-log-out-symbolic'),
+        on_clicked: () => Utils.exec('hyprctl dispatch exit'),
         class_name: 'opts-box',
         cursor: 'pointer'
     })
