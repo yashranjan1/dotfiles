@@ -2,26 +2,8 @@ const theme = Variable("")
 
 const accent = Variable(6)
 
-const accentColors = Variable([
-    'Red',
-    'Orange',
-    'Yellow',
-    'Green',
-    'Mint',
-    'Blue',
-    'Purple',
-    'Violet',
-])
+const accentColors = Variable([])
 
-const colorValues = Variable({
-    'Red': '#FAA0A0',
-    'Orange': '#FAC898',
-    'Yellow':'#FFFAA0',
-    'Green': '#C1E1C1',
-    'Mint': '#98FB98',
-    'Blue': '#A7C7E7',
-    'Purple': '#6F6FEB',
-    'Violet': '#33015a'
-})
+const colorValues = Variable({})
 
 export { theme, accentColors, colorValues, accent }

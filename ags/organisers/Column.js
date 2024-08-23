@@ -3,6 +3,6 @@ export const Column = (items=[], space=0, class_name) => {
         vertical: true,
         children: items,
         spacing: space,
-        class_name: class_name
+        class_name: class_name,
     })
 }

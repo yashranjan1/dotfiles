@@ -23,7 +23,7 @@ export const Wifi = () => {
                             self.icon = `${network.wifi.icon_name}`
                         }, "changed"),
                         Widget.Label({
-                            truncate: 'end'
+                            truncate: 'end',
                         }).hook(network.wifi, self => {
                             var ssid = network.wifi.ssid || "Not Connected"
                             self.label = `${ssid}`
@@ -32,7 +32,7 @@ export const Wifi = () => {
                 }),
                 class_name: `shortcut-menu-item toggle-menu`,
                 cursor: 'pointer',
-                hexpand: true
+                hexpand: true,
             }),
             Widget.Button({
                 setup: self => self.hook(network.wifi, () => {

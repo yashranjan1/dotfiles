@@ -20,13 +20,14 @@ export const QuickOptions = () => {
         cursor: 'pointer'
     })
 
-    return Row(
-        [
+    return Widget.Box({
+        children:[
             settings, 
             logout, 
             poweroff
         ],
-        8,
-        'top-opts'
-    )
+        spacing: 8,
+        class_name: 'top-opts',
+        hpack: "end",
+    })
 }

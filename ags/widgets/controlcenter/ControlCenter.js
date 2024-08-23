@@ -2,6 +2,7 @@ import { QuickMenu } from "./elements/QuickMenu.js"
 import { Media } from "./elements/Media.js"
 import { ShortcutMenu } from "./elements/ShortcutMenu.js"
 import { Column } from "../../organisers/Column.js"
+import { MediaPlayer } from "./elements/MediaPlayer.js"
 
 const ControlCenter = () =>{
     return Column(
@@ -9,6 +10,7 @@ const ControlCenter = () =>{
             QuickMenu(),
             Media(),
             ShortcutMenu(),
+            MediaPlayer()
         ],
         10, 
         'control-center-menu'
