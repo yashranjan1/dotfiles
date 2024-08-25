@@ -2,4 +2,5 @@
 @import url('./accent.css');
 @import url('./widgets/bar/barStyles.css');
 @import url('./widgets/controlcenter/ccStyles.css');
-
+@import url('./widgets/application-launcher/launcher.css');
+@import url('./widgets/calendar/calendar.css');

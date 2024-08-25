@@ -8,6 +8,7 @@
     padding: 5px;
     background-color: @bg;
     border-radius: 40px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
 }
 
 .workspaces{
@@ -51,6 +52,16 @@
 .date{
     color: @fg;
     font-weight: bold;
+}
+
+.date-button {
+    background-color: @alt-bg;
+    padding: 0 10px;
+    border-radius: 10px;
+    background-image: none;
+    border-color: transparent;
+    box-shadow: none;
+    text-shadow: none;
 }
 
 .right{

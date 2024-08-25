@@ -15,10 +15,10 @@ function Left() {
     })
 }
 
-function Center(){
+function Center(monitor){
     return Widget.Box({
         children: [
-            DateWidget()
+            DateWidget(monitor)
         ]
     })
 }
@@ -43,7 +43,7 @@ export function Bar(monitor = 0) {
         anchor: ['top', 'left', 'right'],
         child: Widget.CenterBox({
             start_widget: Left(),
-            center_widget: Center(),
+            center_widget: Center(monitor),
             end_widget: Right(monitor),
             class_name: 'bar-box'
         }),
