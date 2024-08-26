@@ -70,6 +70,7 @@
 
 .activated-box{
     background-color: @fg;
+    color: @bg;
 }
 
 .button{
@@ -82,10 +83,6 @@
     text-shadow: none;
     -gtk-icon-shadow: 0 0 0;
     font-weight: bolder;
-}
-
-.activated-icon{
-    color: @bg;
 }
 
 .power-menu{

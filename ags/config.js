@@ -15,13 +15,15 @@ theme.setValue(vars.theme)
 accent.setValue(vars.color)
 
 
+
+
 App.config({
     windows: [
         Bar(0), 
         Bar(1),
         ControlCenterWindow(0),
         ControlCenterWindow(1),
-        AppLauncherWindow(1),
+        AppLauncherWindow(0),
         CalendarWindow(0),
         CalendarWindow(1)
     ],

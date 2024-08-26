@@ -1,28 +1,31 @@
+import { active, changeActive } from "../../../variables/ActiveWindow.js"
+
 export const ControlCenterButton = (monitor) => {
 
     const button = Widget.Button({
-        on_clicked: () => { 
-            const box = button.child
-            const icons = box.children
+        on_clicked: (self) => {
             button.activated = !button.activated
-            for (var icon of icons){
-                icon.toggleClassName('activated-icon', button.activated)  
-            }
-            box.toggleClassName('activated-box', button.activated)
+
+            self.child.toggleClassName('activated-box', button.activated)
+
+            const newWindow = `control_center${monitor}`
+
+            changeActive(newWindow, self)
             
-            App.toggleWindow(`control_center${monitor}`)
+            App.toggleWindow(newWindow)
             
         },
         child: Widget.Box({
             spacing: 8,
             children: [
-                Widget.Icon({ icon: 'network-wireless-symbolic', class_name: 'not-activated' }),
-                Widget.Icon({ icon: 'audio-volume-low-symbolic', class_name: 'not-activated' })
+                Widget.Icon({ icon: 'network-wireless-symbolic' }),
+                Widget.Icon({ icon: 'audio-volume-low-symbolic' })
             ],
             class_name: 'control-center'
         }),
         class_name: 'button control-center-button',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        name: `button${monitor}`
     })
 
     return Object.assign(button, {
