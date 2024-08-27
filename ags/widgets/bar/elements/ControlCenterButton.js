@@ -29,7 +29,8 @@ export const ControlCenterButton = (monitor) => {
     })
 
     return Object.assign(button, {
-            activated: false
+            activated: false,
+            type: 'cc'
         }
     )
 }

@@ -43,6 +43,11 @@
     padding: 5px 0px;
 }
 
+
+.control-center-button{
+    color: @fg;
+}
+
 .logo{
     padding: 0 2px 0 15px;
     font-size: 20px;
@@ -76,7 +81,6 @@
 .button{
     padding: 0;
     font-size: 17px;
-    background-color: transparent;
     background-image: none;
     border-color: transparent;
     box-shadow: none;
@@ -87,4 +91,6 @@
 
 .power-menu{
     color: #aa0e57;
+    padding: 0px 8px;
+    border-radius: 10px;
 }

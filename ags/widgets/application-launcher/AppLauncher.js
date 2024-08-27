@@ -82,6 +82,9 @@ export function AppLauncherWindow(monitor){
                 App.toggleWindow(`app_launcher${monitor}`)
             }
         })
+        .hook(App, (self, windowName) => {
+            if ( windowName === 'app_launcher0') self.text = '';
+        }, 'window-toggled')
     }
     let window = Widget.Window({
         visible: false,

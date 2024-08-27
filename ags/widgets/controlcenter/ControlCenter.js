@@ -23,7 +23,7 @@ export function ControlCenterWindow(monitor = 0){
         name: `control_center${monitor}`,
         anchor: ['top', 'right'],
         child: ControlCenter(),
-        margins: [50, 45, 0, 0],
+        margins: [50, 0, 0, 0],
         visible: false,
         class_name: 'control-center-window'
     })

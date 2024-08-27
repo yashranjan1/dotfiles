@@ -1,0 +1,31 @@
+.power-menu-box{
+    padding: 10px;
+    min-width: 150px;
+    background-color: @bg;
+    color: @fg;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5); 
+    margin: 20px;
+}
+
+.power-menu-option{
+    font-weight: bold;
+    font-size: 16px;
+    background-color: @alt-bg;
+    padding: 10px;
+    border-radius: 8px;
+    background-image: none;
+    border-color: transparent;
+    box-shadow: none;
+    text-shadow: none;
+    color: @fg;
+}
+
+.power-menu-icon{
+    padding-top: 1.5px;
+    padding-right: 15px;
+}
+
+.power-menu-window{
+    background-color: transparent;
+}

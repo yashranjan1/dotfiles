@@ -2,10 +2,9 @@
     background-color: @bg;
     padding: 10px;
     border-radius: 15px;
-    border: 3px solid @alt-bg;
     min-height: 300px;
     min-width:  700px;
-    background-color: @alt-bg;
+    background-color: @bg;
     margin: 10px 17px;
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5); 
 }
@@ -21,7 +20,7 @@
 }
 
 .input-field {
-    background-color: @alt-bg;
+    background-color: transparent;
     font-size: 16px;
     color: @fg;
     padding: 7px 0px;
@@ -30,7 +29,8 @@
 .search-icon{
     border-radius: 8px 0 0 8px;
     padding: 10px 17px 7px 17px;
-    background-color: @alt-bg;
+    background-color: @bg;
+    color: @fg;
     font-size: 17px;
 }
 
@@ -45,7 +45,7 @@
 .app-list{
     min-height: 300px;
     border-radius: 15px;
-    background-color: @bg;
+    background-color: @alt-bg;
     padding: 20px;
 }
 

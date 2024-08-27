@@ -19,7 +19,8 @@ const changeActive = (newWindow, button) => {
         App.toggleWindow(active.value)
         active.setValue(newWindow)
         activeButton.value.activated = !activeButton.value.activated
-        activeButton.value.child.toggleClassName('activated-box', activeButton.value.activated)
+        if (activeButton.value.type == 'cc') activeButton.value.child.toggleClassName('activated-box', activeButton.value.activated)
+        else activeButton.value.toggleClassName('activated-box', activeButton.value.activated)
         activeButton.value = button
     }
 }

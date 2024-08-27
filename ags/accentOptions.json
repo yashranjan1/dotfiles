@@ -1,10 +1,34 @@
 {
-    "Red": "#FAA0A0",
-    "Orange": "#FAC898",
-    "Yellow":"#FFFAA0",
-    "Green": "#C1E1C1",
-    "Mint": "#98FB98",
-    "Blue": "#A7C7E7",
-    "Purple": "#6F6FEB",
-    "Violet": "#33015a"
+    "Red": {
+        "dark": "#FAA0A0",
+        "light": "#5A0000"
+    },
+    "Orange": {
+        "dark": "#FAC898",
+        "light": "#AE6E00"
+    },
+    "Yellow": {
+        "dark": "#FFFAA0",
+        "light": "#CBAB3B"
+    },
+    "Green": {
+        "dark": "#C1E1C1",
+        "light": "#0F781E"
+    },
+    "Mint": {
+        "dark": "#98FB98",
+        "light": "#2C6713"
+    },
+    "Blue": {
+        "dark": "#A7C7E7",
+        "light": "#194672"
+    },
+    "Purple": {
+        "dark": "#6F6FEB",
+        "light": "#38385C"
+    },
+    "Grayscale": {
+        "dark": "#FFFFFF",
+        "light": "#000000"
+    }
 }

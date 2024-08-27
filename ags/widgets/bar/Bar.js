@@ -26,10 +26,9 @@ function Center(monitor){
 function Right(monitor){
     return Widget.Box({
         hpack: "end",
-        spacing: 8,
         children: [
             ControlCenterButton(monitor),
-            PowerMenu(),
+            PowerMenu(monitor),
         ],
         class_name: 'right'
     })

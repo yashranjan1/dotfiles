@@ -1,5 +1,5 @@
 import { Row } from '../../../organisers/Row.js'
-import { accent, theme } from '../../../variables/Theming.js'
+import { accent, theme, colorValues, accentColors } from '../../../variables/Theming.js'
 import { cssVarGenerator } from '../../../variables/HelperFunctions.js'
 
 
@@ -16,9 +16,13 @@ export const DarkModeToggle = () => {
             cssVarGenerator('bg', theme.value == 'dark' ? '#000' : '#fff') + 
             cssVarGenerator('alt-bg', theme.value == 'dark' ? '#151515' : '#adadad') + 
             cssVarGenerator('inactive-ws', theme.value == 'dark' ? '#adadad' : '#151515')
+
+            const colorCode = colorValues.value[accentColors.value[accent.value]][theme.value]
+            const accentOutputCSS = cssVarGenerator('accent', colorCode)
             
             Utils.writeFileSync(JSON.stringify(themeOutputJSON), '.config/ags/variables.json')
             Utils.writeFileSync(themeOutputCSS, '.config/ags/theme.css')
+            Utils.writeFileSync(accentOutputCSS, '.config/ags/accent.css')
 
             App.applyCss('.config/ags/styles.css', true)
         },

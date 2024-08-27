@@ -41,6 +41,7 @@ function Player(player) {
         wrap: true,
         hpack: "start",
         label: player.bind("track_artists").transform(a => a.join(", ")),
+        truncate: 'end'
     })
 
     const positionSlider = Widget.Slider({

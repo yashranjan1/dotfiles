@@ -19,7 +19,8 @@ export const AccentChanger = () => {
                         }
     
 
-                        const colorCode = colorValues.value[accentColors.value[accent.value]]
+                        const colorCode = colorValues.value[accentColors.value[accent.value]][theme.value]
+
                         const accentOutputCSS = cssVarGenerator('accent', colorCode)
 
                         Utils.writeFileSync(JSON.stringify(themeOutputJSON), '.config/ags/variables.json')
@@ -32,7 +33,8 @@ export const AccentChanger = () => {
                 Widget.Label({
                     label: '',
                     hexpand: true,
-                    class_name: 'accent-label'
+                    class_name: 'accent-label',
+                    truncate: 'end'
                 }).hook(accent, self => {
                     self.label = accentColors.value[accent.value]
                 }),
@@ -47,7 +49,7 @@ export const AccentChanger = () => {
                             "color": accent.value
                         }
 
-                        const colorCode = colorValues.value[accentColors.value[accent.value]]
+                        const colorCode = colorValues.value[accentColors.value[accent.value]][theme.value]
                         const accentOutputCSS = cssVarGenerator('accent', colorCode)
 
                         Utils.writeFileSync(JSON.stringify(themeOutputJSON), '.config/ags/variables.json')
