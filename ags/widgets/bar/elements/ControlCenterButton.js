@@ -1,4 +1,6 @@
-import { active, changeActive } from "../../../variables/ActiveWindow.js"
+import { changeActive } from "../../../variables/ActiveWindow.js"
+const audio = await Service.import('audio')
+const network = await Service.import('network')
 
 export const ControlCenterButton = (monitor) => {
 
@@ -18,14 +20,18 @@ export const ControlCenterButton = (monitor) => {
         child: Widget.Box({
             spacing: 8,
             children: [
-                Widget.Icon({ icon: 'network-wireless-symbolic' }),
-                Widget.Icon({ icon: 'audio-volume-low-symbolic' })
+                Widget.Icon().hook(audio, self => {
+                    if (audio.speaker.volume == 0 || audio.speaker.is_muted) self.icon = 'audio-volume-muted-symbolic'
+                    else if (audio.speaker.volume < 0.3) self.icon = 'audio-volume-low-symbolic'
+                    else if (audio.speaker.volume < 0.6 && audio.speaker.volume >= 0.3) self.icon = 'audio-volume-medium-symbolic'
+                    else if (audio.speaker.volume < 1 && audio.speaker.volume >= 0.6) self.icon = 'audio-volume-high-symbolic'
+                }),
+                Widget.Icon().hook(network, self=> self.icon = network.wifi.icon_name)
             ],
             class_name: 'control-center'
         }),
-        class_name: 'button control-center-button',
+        class_name: 'button toggle-button',
         cursor: 'pointer',
-        name: `button${monitor}`
     })
 
     return Object.assign(button, {

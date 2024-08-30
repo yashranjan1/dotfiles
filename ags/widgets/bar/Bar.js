@@ -3,6 +3,7 @@ import { Workspaces } from "./elements/Workspaces.js"
 import { DateWidget } from "./elements/DateWidget.js"
 import { ControlCenterButton } from "./elements/ControlCenterButton.js"
 import { PowerMenu  } from "./elements/PowerMenu.js"
+import { WallpaperMenuButton } from "./elements/WallpaperMenuButton.js"
 
 
 function Left() {
@@ -27,6 +28,7 @@ function Right(monitor){
     return Widget.Box({
         hpack: "end",
         children: [
+            WallpaperMenuButton(monitor),
             ControlCenterButton(monitor),
             PowerMenu(monitor),
         ],

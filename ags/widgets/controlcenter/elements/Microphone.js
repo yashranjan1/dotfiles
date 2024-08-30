@@ -4,7 +4,18 @@ export const Microphone = () => {
 
     return Widget.Box({
         children: [
-            Widget.Icon({ icon: 'audio-input-microphone-symbolic', css: 'font-size:16px'}),
+            Widget.Button({
+                child: Widget.Icon({ 
+                    class_name: 'vol-icon'
+                }).hook(audio, self => {
+                    self.icon = audio["microphone"].is_muted ? 'microphone-sensitivity-muted-symbolic' : 'audio-input-microphone-symbolic'
+                }),
+                class_name: 'button',
+                on_clicked: () => {
+                    if (audio["microphone"].is_muted) audio["microphone"].is_muted = false
+                    else audio["microphone"].is_muted = true
+                }
+            }),
             Widget.Slider({
                 on_change: ({ value, dragging }) => {
                     if (dragging) {

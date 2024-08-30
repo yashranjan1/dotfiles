@@ -44,7 +44,7 @@
 }
 
 
-.control-center-button{
+.toggle-button{
     color: @fg;
 }
 
@@ -93,4 +93,9 @@
     color: #aa0e57;
     padding: 0px 8px;
     border-radius: 10px;
+}
+
+.wallpaper-menu{
+    padding: 3px 5px;
+    border-radius: 8px;
 }

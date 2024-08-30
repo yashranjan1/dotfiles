@@ -39,6 +39,10 @@
     color: @fg;
 }
 
+.vol-icon{
+    color: @fg
+}
+
 .section{
     color: @fg;
     background-color: @alt-bg;

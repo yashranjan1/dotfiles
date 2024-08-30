@@ -9,8 +9,10 @@ export const DarkModeToggle = () => {
             theme.setValue(theme.value == 'dark' ? 'light' : 'dark')
             const themeOutputJSON = {
                 "theme": theme.value,
-                "color": accent.value
+                "color": accent.value,
+                "wallpaper": currentWallpaper.value
             }
+
     
             let themeOutputCSS = cssVarGenerator('fg', theme.value == 'dark' ? '#fff' : '#000') + 
             cssVarGenerator('bg', theme.value == 'dark' ? '#000' : '#fff') + 

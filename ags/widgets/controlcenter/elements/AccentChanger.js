@@ -1,5 +1,6 @@
 import { cssVarGenerator } from "../../../variables/HelperFunctions.js"
 import { accent, accentColors, colorValues, theme} from "../../../variables/Theming.js"
+import { currentWallpaper } from "../../../variables/Wallpapers.js"
 
 export const AccentChanger = () => {
     return Widget.Box({
@@ -46,7 +47,8 @@ export const AccentChanger = () => {
                         
                         const themeOutputJSON = {
                             "theme": theme.value,
-                            "color": accent.value
+                            "color": accent.value,
+                            "wallpaper": currentWallpaper.value
                         }
 
                         const colorCode = colorValues.value[accentColors.value[accent.value]][theme.value]
