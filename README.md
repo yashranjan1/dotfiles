@@ -1,6 +1,15 @@
 # Hyprland Dot files 
 Yash's dotfiles for Arch. Heavy inspiration taken from [Aylur's Dotfiles](https://github.com/Aylur/dotfiles)
 
+![Image one](https://raw.githubusercontent.com/yashranjan1/dotfiles/main/showcase/1725196233.png)
+![Image two](https://raw.githubusercontent.com/yashranjan1/dotfiles/main/showcase/1725196177.png)
+![Image three](https://raw.githubusercontent.com/yashranjan1/dotfiles/main/showcase/1725198911.png)
+
+
+https://github.com/user-attachments/assets/65f9c045-56d4-4fca-8deb-851a3d128688
+
+
+
 > [!NOTE]  
 > Some features on the ags widgets are not complete and I still need to work on these. See the [WIP checklist](#features-i-want-to-add) below if you want to know what features still need work.
 
@@ -17,6 +26,7 @@ You need to have these to make sure everything in my dotfiles work you.
 - [grim](https://github.com/emersion/grim)
 - [swappy](https://github.com/jtheoof/swappy)
 - [slurp](https://github.com/emersion/slurp)
+- [swww](https://github.com/LGFae/swww)
 - JetBrains Mono NF (optional)
 - Oh-my-posh (optional)
 
