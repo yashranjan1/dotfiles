@@ -16,7 +16,7 @@ https://github.com/user-attachments/assets/65f9c045-56d4-4fca-8deb-851a3d128688
 
 ## Dependencies
 
-You need to have these to make sure everything in my dotfiles work you.
+You need to have these to make sure everything in my dotfiles works for you.
 
 - [Hyprland](https://hyprland.org/)
 - [ags](https://github.com/Aylur/ags)
