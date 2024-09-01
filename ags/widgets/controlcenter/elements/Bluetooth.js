@@ -1,7 +1,6 @@
 const bluetooth = await Service.import('bluetooth')
 
 export const Bluetooth = () => {
-    // bluetooth.enabled = true
     return Widget.Box({
         children: [
                 Widget.Button({
@@ -34,7 +33,9 @@ export const Bluetooth = () => {
                 setup: self => self.hook(bluetooth, () => {
                     self.toggleClassName("active", bluetooth.enabled)
                 }),
-                on_clicked: ()=>{},
+                on_clicked: ()=>{
+                    Utils.exec('blueberry')
+                },
                 child: Widget.Icon({
                     icon: 'pan-end-symbolic'
                 }),

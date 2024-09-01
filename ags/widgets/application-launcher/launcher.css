@@ -75,9 +75,9 @@
 }
 
 .app-label{
-    font-family: monospace;
+    font-family: "JetBrains Mono Nerd Font";
     letter-spacing: 0;
-    font-weight: bolder;
+    font-weight: 600;
 }
 
 .app-icon{

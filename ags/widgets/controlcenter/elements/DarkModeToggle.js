@@ -1,7 +1,7 @@
 import { Row } from '../../../organisers/Row.js'
 import { accent, theme, colorValues, accentColors } from '../../../variables/Theming.js'
 import { cssVarGenerator } from '../../../variables/HelperFunctions.js'
-
+import { currentWallpaper } from "../../../variables/Wallpapers.js"
 
 export const DarkModeToggle = () => {
     return Widget.Button({
