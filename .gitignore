@@ -22,4 +22,5 @@ user-dirs.dirs
 user-dirs.locale
 swappy
 QtProject.conf
-
+create-next-app-nodejs
+nextjs-nodejs
