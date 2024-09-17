@@ -2,7 +2,7 @@ import { Logo } from "./elements/Logo.js"
 import { Workspaces } from "./elements/Workspaces.js"
 import { DateWidget } from "./elements/DateWidget.js"
 import { ControlCenterButton } from "./elements/ControlCenterButton.js"
-import { PowerMenu  } from "./elements/PowerMenu.js"
+import { PowerMenu } from "./elements/PowerMenu.js"
 import { WallpaperMenuButton } from "./elements/WallpaperMenuButton.js"
 
 
@@ -16,15 +16,16 @@ function Left() {
     })
 }
 
-function Center(monitor){
+function Center(monitor) {
     return Widget.Box({
         children: [
             DateWidget(monitor)
-        ]
+        ],
+        class_name: 'full-opacity'
     })
 }
 
-function Right(monitor){
+function Right(monitor) {
     return Widget.Box({
         hpack: "end",
         children: [
@@ -32,7 +33,7 @@ function Right(monitor){
             ControlCenterButton(monitor),
             PowerMenu(monitor),
         ],
-        class_name: 'right'
+        class_name: 'right full-opacity'
     })
 }
 
@@ -48,6 +49,6 @@ export function Bar(monitor = 0) {
             end_widget: Right(monitor),
             class_name: 'bar-box'
         }),
-        class_name: 'bar'
+        class_name: 'bar full-opacity'
     })
 }

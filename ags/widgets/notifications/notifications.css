@@ -1,0 +1,10 @@
+.notifs-panel {
+    background-color: transparent;
+    min-height: 600px;
+    min-width: 350px;
+    padding: 10px;
+}
+
+.notifs-window {
+    background-color: transparent;
+}

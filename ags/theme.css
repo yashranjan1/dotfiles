@@ -1,4 +1,4 @@
-@define-color fg #fff;
-@define-color bg #000;
+@define-color fg #ffffff;
+@define-color bg rgba(0, 0, 0, 0.8);
 @define-color alt-bg #151515;
 @define-color inactive-ws #adadad;

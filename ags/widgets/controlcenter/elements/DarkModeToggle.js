@@ -4,6 +4,15 @@ import { cssVarGenerator } from '../../../variables/HelperFunctions.js'
 import { currentWallpaper } from "../../../variables/Wallpapers.js"
 
 export const DarkModeToggle = () => {
+
+    const blackBg = 'rgba(0, 0, 0, 0.8)'
+    const whiteBg = 'rgba(255, 255, 255, 0.8)'
+
+    const blackFg = '#000000'
+    const whiteFg = '#ffffff'
+    const darkGray = '#151515'
+    const lightGray = '#adadad'
+
     return Widget.Button({
         on_clicked: () => {
             theme.setValue(theme.value == 'dark' ? 'light' : 'dark')
@@ -13,15 +22,15 @@ export const DarkModeToggle = () => {
                 "wallpaper": currentWallpaper.value
             }
 
-    
-            let themeOutputCSS = cssVarGenerator('fg', theme.value == 'dark' ? '#fff' : '#000') + 
-            cssVarGenerator('bg', theme.value == 'dark' ? '#000' : '#fff') + 
-            cssVarGenerator('alt-bg', theme.value == 'dark' ? '#151515' : '#adadad') + 
-            cssVarGenerator('inactive-ws', theme.value == 'dark' ? '#adadad' : '#151515')
+
+            let themeOutputCSS = cssVarGenerator('fg', theme.value == 'dark' ? whiteFg : blackFg) +
+                cssVarGenerator('bg', theme.value == 'dark' ? blackBg : whiteBg) +
+                cssVarGenerator('alt-bg', theme.value == 'dark' ? darkGray : lightGray) +
+                cssVarGenerator('inactive-ws', theme.value == 'dark' ? lightGray : darkGray)
 
             const colorCode = colorValues.value[accentColors.value[accent.value]][theme.value]
             const accentOutputCSS = cssVarGenerator('accent', colorCode)
-            
+
             Utils.writeFileSync(JSON.stringify(themeOutputJSON), '.config/ags/variables.json')
             Utils.writeFileSync(themeOutputCSS, '.config/ags/theme.css')
             Utils.writeFileSync(accentOutputCSS, '.config/ags/accent.css')

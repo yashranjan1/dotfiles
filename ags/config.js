@@ -6,7 +6,7 @@ import { CalendarWindow } from "./widgets/calendar/Calendar.js"
 import { PowerMenuWindow } from "./widgets/power-menu/PowerMenu.js"
 import { WallpaperSwitcherWindow } from "./widgets/wallpaper-switcher/WallpaperSwitcher.js"
 import { currentWallpaper, wallpaperOptions } from "./variables/Wallpapers.js"
-
+import { NotificationsPanel } from "./widgets/notifications/notifications.js"
 
 // Variable setup
 
@@ -32,7 +32,7 @@ wallpaperOptions.setValue(wallpaperVars)
 
 App.config({
     windows: [
-        Bar(0), 
+        Bar(0),
         Bar(1),
         ControlCenterWindow(0),
         ControlCenterWindow(1),
@@ -42,7 +42,8 @@ App.config({
         PowerMenuWindow(0),
         PowerMenuWindow(1),
         WallpaperSwitcherWindow(0),
-        WallpaperSwitcherWindow(1)
+        WallpaperSwitcherWindow(1),
+        NotificationsPanel()
     ],
-    style:'./styles.css'
+    style: './styles.css'
 })
