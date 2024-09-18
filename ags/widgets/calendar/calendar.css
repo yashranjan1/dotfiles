@@ -3,12 +3,11 @@
 }
 
 .calendar{ 
-    background-color: @alt-bg;
+    background-color: transparent;
     padding: 10px 10px 5px 10px;
     color: @fg;
     border: 0;
     margin: 10px;
-    border-radius: 8px;
     font-family: 'JetBrainsMono Nerd Font';
     font-weight: 100;
 }
@@ -16,14 +15,14 @@
 .calendar-container {
     margin: 10px 17px;
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5); 
-    background-color: @bg;
     border-radius: 12px;
+    background-color: @bg;
     padding: 15px;
 }
 
 .calendar:selected{
     background-color: @accent;
-    color: @bg;
+    color: @fg-complement;
 }
 
 .calendar:indeterminate {
@@ -35,3 +34,7 @@
     font-weight: 900;
 }
 
+.calendar-box{
+    background-color: @alt-bg;
+    border-radius: 12px;
+}

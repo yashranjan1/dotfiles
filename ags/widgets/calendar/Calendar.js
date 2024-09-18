@@ -1,10 +1,13 @@
-export function CalendarWindow(monitor){
+export function CalendarWindow(monitor) {
     const Calendar = () => {
-        return Widget.Calendar({
-            showDayNames: true,
-            showHeading: true,
-            hpack: 'center',
-            class_name: 'calendar'
+        return Widget.Box({
+            child: Widget.Calendar({
+                showDayNames: true,
+                showHeading: true,
+                hpack: 'center',
+                class_name: 'calendar'
+            }),
+            class_name: 'calendar-box'
         })
     }
 
@@ -17,7 +20,7 @@ export function CalendarWindow(monitor){
         name: `calendar${monitor}`,
         monitor: monitor,
         anchor: ['top'],
-        margins: [50, 0, 0 ,0],
+        margins: [50, 0, 0, 0],
         class_name: 'calendar-window'
     })
 }

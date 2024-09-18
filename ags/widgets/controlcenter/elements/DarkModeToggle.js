@@ -5,13 +5,15 @@ import { currentWallpaper } from "../../../variables/Wallpapers.js"
 
 export const DarkModeToggle = () => {
 
-    const blackBg = 'rgba(0, 0, 0, 0.8)'
-    const whiteBg = 'rgba(255, 255, 255, 0.8)'
+    const black = '#000000'
+    const blackBlur = 'rgba(0, 0, 0, 0.8)'
+    const white = '#ffffff'
+    const whiteBlur = 'rgba(255, 255, 255, 0.61)'
 
-    const blackFg = '#000000'
-    const whiteFg = '#ffffff'
     const darkGray = '#151515'
+    const darkGrayBlur = 'rgba(255, 255, 255, 0.1)'
     const lightGray = '#adadad'
+    const lightGrayBlur = 'rgba(0, 0, 0, 0.2)'
 
     return Widget.Button({
         on_clicked: () => {
@@ -23,9 +25,10 @@ export const DarkModeToggle = () => {
             }
 
 
-            let themeOutputCSS = cssVarGenerator('fg', theme.value == 'dark' ? whiteFg : blackFg) +
-                cssVarGenerator('bg', theme.value == 'dark' ? blackBg : whiteBg) +
-                cssVarGenerator('alt-bg', theme.value == 'dark' ? darkGray : lightGray) +
+            let themeOutputCSS = cssVarGenerator('fg', theme.value == 'dark' ? white : black) +
+                cssVarGenerator('fg-complement', theme.value == 'dark' ? black : white) +
+                cssVarGenerator('bg', theme.value == 'dark' ? blackBlur : whiteBlur) +
+                cssVarGenerator('alt-bg', theme.value == 'dark' ? darkGrayBlur : lightGrayBlur) +
                 cssVarGenerator('inactive-ws', theme.value == 'dark' ? lightGray : darkGray)
 
             const colorCode = colorValues.value[accentColors.value[accent.value]][theme.value]

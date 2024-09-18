@@ -1,7 +1,7 @@
 import { currentWallpaper, wallpaperOptions } from "../../variables/Wallpapers.js"
 import { theme, accent } from "../../variables/Theming.js"
 
-export function WallpaperSwitcherWindow(monitor){
+export function WallpaperSwitcherWindow(monitor) {
 
     const wpOptionBox = (wp) => {
         const [name, path] = wp
@@ -9,7 +9,7 @@ export function WallpaperSwitcherWindow(monitor){
             name: `wp-option${name}${monitor}`,
             child: Widget.Box({
                 vertical: true,
-                children:[
+                children: [
                     Widget.Box({
                         css: `background-image: url('${path}')`,
                         class_name: 'wallpaper-thumbnail'
@@ -17,13 +17,16 @@ export function WallpaperSwitcherWindow(monitor){
                     Widget.Label({
                         label: name,
                         class_name: 'wallpaper-label'
+                    }).hook(currentWallpaper, self => {
+                        currentWallpaper.value == name ? self.toggleClassName("active-label", true) : self.toggleClassName("active-label", false)
                     })
+
                 ],
             }),
             on_clicked: () => {
                 if (name != currentWallpaper.value) {
                     currentWallpaper.setValue(name)
-                    
+
                     const themeOutputJSON = {
                         "theme": theme.value,
                         "color": accent.value,
@@ -39,23 +42,23 @@ export function WallpaperSwitcherWindow(monitor){
                 }
 
             },
-            class_names:['button', 'wallpaper-option'],
+            class_names: ['button', 'wallpaper-option'],
             cursor: 'pointer',
         }).hook(currentWallpaper, self => {
             currentWallpaper.value == name ? self.toggleClassName("active-wp", true) : self.toggleClassName("active-wp", false)
         })
-        
+
     }
 
     const wallpaperSwitcher = () => {
         let optionRow = []
         let optionCol = []
-        
+
         const wpList = Object.entries(wallpaperOptions.value)
 
         wpList.forEach(wp => {
             optionRow.push(wpOptionBox(wp))
-            if (optionRow.length == 3){
+            if (optionRow.length == 3) {
                 let optionRowWidget = Widget.Box({
                     children: optionRow
                 })

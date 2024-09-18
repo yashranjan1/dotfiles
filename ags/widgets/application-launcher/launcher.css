@@ -29,7 +29,7 @@
 .search-icon{
     border-radius: 8px 0 0 8px;
     padding: 10px 17px 7px 17px;
-    background-color: @bg;
+    background-color: transparent;
     color: @fg;
     font-size: 17px;
 }

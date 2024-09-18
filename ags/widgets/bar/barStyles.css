@@ -79,7 +79,7 @@
 
 .activated-box{
     background-color: @fg;
-    color: @bg;
+    color: @fg-complement;
 }
 
 .button{

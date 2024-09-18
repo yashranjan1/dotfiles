@@ -97,7 +97,7 @@
 
 .active {
     background-color: @accent;
-    color: @bg;
+    color: @fg-complement;
     -gtk-icon-shadow: 0 0 0;
     text-shadow: 0 0 0;
 }
