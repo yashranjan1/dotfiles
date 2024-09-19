@@ -7,7 +7,7 @@ export const UserCard = () => {
         spacing: 10,
         children: [
             Widget.Icon({
-                icon : 'avatar-default',
+                icon: 'avatar-default',
                 class_name: 'avatar'
             }),
             Widget.Box({
