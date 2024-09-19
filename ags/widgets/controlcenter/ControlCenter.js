@@ -4,7 +4,7 @@ import { ShortcutMenu } from "./elements/ShortcutMenu.js"
 import { Column } from "../../organisers/Column.js"
 import { MediaPlayer } from "./elements/MediaPlayer.js"
 
-const ControlCenter = () =>{
+const ControlCenter = () => {
     return Column(
         [
             QuickMenu(),
@@ -12,12 +12,12 @@ const ControlCenter = () =>{
             ShortcutMenu(),
             MediaPlayer()
         ],
-        10, 
+        10,
         'control-center-menu'
     )
 }
 
-export function ControlCenterWindow(monitor = 0){
+export function ControlCenterWindow(monitor = 0) {
     return Widget.Window({
         monitor,
         name: `control_center${monitor}`,

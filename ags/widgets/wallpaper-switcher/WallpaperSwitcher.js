@@ -37,7 +37,7 @@ export function WallpaperSwitcherWindow(monitor) {
 
                     Utils.exec(`swww img ${path} --transition-type center --transition-fps 90 --transition-step 30`)
                     Utils.exec(`wal -i ${path}`)
-
+                    Utils.writeFileSync(`$wp = ~/${path}`, '.config/hypr/options.conf')
 
                 }
 
