@@ -78,7 +78,7 @@
 }
 
 .activated-box{
-    background-color: @fg;
+    background-color: @accent;
     color: @fg-complement;
 }
 

@@ -74,12 +74,13 @@ export function WallpaperSwitcherWindow(monitor) {
             optionRow = []
         }
 
-        return Widget.Box({
+        return Widget.Scrollable({
             class_name: 'wallpaper-switcher',
             child: Widget.Box({
                 vertical: true,
                 children: optionCol
-            })
+            }),
+            hscroll: "never"
         })
     }
 
