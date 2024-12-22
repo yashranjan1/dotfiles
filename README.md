@@ -29,6 +29,7 @@ You need to have these to make sure everything in my dotfiles works for you.
 - [swww](https://github.com/LGFae/swww)
 - JetBrains Mono NF (optional)
 - Oh-my-posh (optional)
+- [Warp-terminal](https://github.com/warpdotdev/Warp) (optional)
 
 ## Usage
 
