@@ -24,7 +24,7 @@ icon.Logo {
     border-radius: 5px;
     padding: 0px;
     background-color: #{$inactive-ws};
-    margin: 9px 2px;
+    margin: 10px 2px;
 }
 
 .focused {
@@ -49,4 +49,22 @@ icon.Logo {
         font-size: 15px;
         margin: 0px 10px;
     }
+}
+
+.control-center-btn {
+    background-color: #{$theme_bg_color};
+    color: #{$theme_fg_color};
+    border-radius: 10px;
+    margin: 0px;
+    padding: 3px 10px;
+    font-size: 18px;
+}
+
+.mr-8px {
+    margin-right: 8px;
+}
+
+.bg-active {
+    background-color: #{$accent};
+    color: #{$theme_bg_color};
 }

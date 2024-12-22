@@ -1,5 +1,5 @@
 import { App, Astal, Gdk } from "astal/gtk3"
-import Calendar from "./widget/Calendar"
+import Calendar from "@Notif/Calendar"
 
 export default function NotificationCenter(gdkmonitor: Gdk.Monitor) {
     return <window

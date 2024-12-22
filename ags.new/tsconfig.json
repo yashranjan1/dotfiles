@@ -16,7 +16,18 @@
             ],
             "astal/*": [
                 "/usr/share/astal/gjs/*"
-            ]
+            ],
+            "@/*": [
+                "/home/yash/.config/ags.new/widget/*"
+            ],
+            "@Bar/*": [
+                "/home/yash/.config/ags.new/widget/Bar/*",
+                "/home/yash/.config/ags.new/widget/Bar/widget/*"
+            ],
+            "@Notif/*": [
+                "/home/yash/.config/ags.new/widget/NotificationCenter/*",
+                "/home/yash/.config/ags.new/widget/NotificationCenter/widget/*"
+            ],
         },
     }
 }

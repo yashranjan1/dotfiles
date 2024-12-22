@@ -1,9 +1,16 @@
-import { App, Astal, Gdk } from "astal/gtk3"
-import Arch from "./widget/Logo"
-import Workspaces from "./widget/Workspaces"
-import Date from "./widget/Date"
+import { App, Astal, Gdk, Gtk } from "astal/gtk3"
+import Arch from "@Bar/Logo"
+import Workspaces from "@Bar/Workspaces"
+import Date from "@Bar/Date"
+import ControlCenter from "@Bar/ControlCenter"
+import PowerMenu from "@Bar/PowerMenu"
+import { BarProps } from "../../types/barProps"
+import WallpaperCenter from "@Bar/WallpaperCenter"
 
-export default function Bar(gdkmonitor: Gdk.Monitor) {
+
+export default function Bar({ gdkmonitor, menuState }: BarProps) {
+
+
     return <window
         className="Bar"
         name={`Bar-${gdkmonitor.get_model()}`}
@@ -19,9 +26,13 @@ export default function Bar(gdkmonitor: Gdk.Monitor) {
                 <Workspaces />
             </box>
             <box>
-                <Date displayName={gdkmonitor.get_model() as string} />
+                <Date monitor={`${gdkmonitor.get_model()}`} state={menuState}/>
             </box>
-            <box />
+            <box hexpand halign={Gtk.Align.END} >
+                <WallpaperCenter monitor={`${gdkmonitor.get_model()}`} state={menuState}/>
+                <ControlCenter monitor={`${gdkmonitor.get_model()}`} state={menuState}/>
+                <PowerMenu monitor={`${gdkmonitor.get_model()}`} state={menuState}/>
+            </box>
         </centerbox>
     </window>
 }
