@@ -1,0 +1,52 @@
+window.Bar {
+    background: transparent;
+    color: #{$theme_bg_color};
+    font-weight: 700;
+
+    >centerbox {
+        background-color: #{$theme_bg_color};
+        color: #{$theme_fg_color};
+        margin: 15px 15px 0px;
+        padding: 7px 10px;
+        border-radius: 50px;
+    }
+}
+
+icon.Logo {
+    color: #{$accent};
+    font-size: 20px;
+    margin: 0px 10px;
+}
+
+.workspace-tab{
+    min-height: 10px;
+    min-width: 10px;
+    border-radius: 5px;
+    padding: 0px;
+    background-color: #{$inactive-ws};
+    margin: 9px 2px;
+}
+
+.focused {
+    background-color: #{$accent};
+    padding: 0px 15px;
+}
+
+.focused-client {
+    font-size: 14px;
+    margin: 0px 10px;
+}
+
+.date-btn {
+    background-color: #{$theme_alt_bg_color};
+    color: #{$theme_fg_color};
+    border-radius: 10px;
+    margin: 0px;
+    padding: 0px;
+
+    .date {
+        font-weight: bolder;
+        font-size: 15px;
+        margin: 0px 10px;
+    }
+}

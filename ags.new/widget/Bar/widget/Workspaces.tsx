@@ -9,7 +9,7 @@ function FocusedClient() {
         className="focused-client"
         visible={focused.as(Boolean)}>
         {focused.as(client => (
-            client && <label label={bind(client, "title").as(String)} />
+            client && <label label={bind(client, "title").as(String => String.split("-")[String.split("-").length-1])} />
         ))}
     </box>
 }
@@ -31,7 +31,8 @@ function Workspaces() {
                 </button>
             ))
         )}
+        <FocusedClient />
     </box>
 }
 
-export { FocusedClient, Workspaces }
+export default Workspaces;

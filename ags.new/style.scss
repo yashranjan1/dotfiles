@@ -1,49 +1,10 @@
-@import "accent";
-
 // https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
+
 $theme_fg_color: "@theme_fg_color";
 $theme_bg_color: "@theme_bg_color";
 $inactive-ws: "@unfocused_insensitive_color";
+$theme_alt_bg_color: "@unfocused_borders";
+@import "accent";
+@import "widget/Bar/style";
+@import "widget/NotificationCenter/style";
 
-
-
-window.Bar {
-    background: transparent;
-    color: #{$theme_bg_color};
-    font-weight: bold;
-
-    >centerbox {
-        background-color: #{$theme_bg_color};
-        margin: 15px;
-        padding: 10px;
-        border-radius: 50px;
-    }
-
-
-}
-
-icon.Logo {
-    color: #{$accent};
-    font-size: 20px;
-    margin: 0px 10px;
-}
-
-.workspace-tab{
-    min-height: 10px;
-    min-width: 10px;
-    border-radius: 5px;
-    padding: 0px;
-    background-color: #{$inactive-ws};
-    margin: 5px 2px;
-}
-
-.focused {
-    background-color: #{$accent};
-    padding: 0px 15px;
-}
-
-.focused-client {
-    color: #{$theme_fg_color};
-    font-size: 14px;
-    margin: 0px 10px;
-}
