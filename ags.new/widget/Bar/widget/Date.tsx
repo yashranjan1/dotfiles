@@ -5,7 +5,7 @@ import { DateProps } from "../../../types/dateProps"
 
 
 
-function Date({ format = "%-l:%M %p", monitor, state }: DateProps) {
+function Date({ format = "%-k:%M", monitor, state }: DateProps) {
     const time = Variable<string>("").poll(1000, () =>
         GLib.DateTime.new_now_local().format(format)!)
 

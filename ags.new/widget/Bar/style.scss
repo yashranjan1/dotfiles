@@ -1,14 +1,14 @@
 window.Bar {
     background: transparent;
-    color: #{$theme_bg_color};
     font-weight: 700;
 
     >centerbox {
         background-color: #{$theme_bg_color};
         color: #{$theme_fg_color};
-        margin: 15px 15px 0px;
+        margin: 15px 15px 10px 15px;
         padding: 7px 10px;
         border-radius: 50px;
+        box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
     }
 }
 

@@ -28,6 +28,10 @@
                 "/home/yash/.config/ags.new/widget/NotificationCenter/*",
                 "/home/yash/.config/ags.new/widget/NotificationCenter/widget/*"
             ],
+            "@Power/*": [
+                "/home/yash/.config/ags.new/widget/PowerMenu/*",
+                "/home/yash/.config/ags.new/widget/PowerMenu/widget/*"
+            ],
         },
     }
 }

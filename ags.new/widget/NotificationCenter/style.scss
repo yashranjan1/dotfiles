@@ -1,8 +1,9 @@
 .notification-center-box {
     background-color: #{$theme_bg_color};
     border-radius: 10px;
-    margin: 10px;
     padding: 10px;
+    margin: 10px 20px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
 }
 
 .calendar {
@@ -19,7 +20,7 @@
 }
 
 .calendar:indeterminate {
-    color: #5d5d5d;
+    color: #{$theme_bg_color};
 }
 
 .calendar.highlight, .calendar.header, .calendar.button {

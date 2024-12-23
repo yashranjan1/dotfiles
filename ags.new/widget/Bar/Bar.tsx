@@ -4,11 +4,11 @@ import Workspaces from "@Bar/Workspaces"
 import Date from "@Bar/Date"
 import ControlCenter from "@Bar/ControlCenter"
 import PowerMenu from "@Bar/PowerMenu"
-import { BarProps } from "../../types/barProps"
 import WallpaperCenter from "@Bar/WallpaperCenter"
+import { WindowCustomProps } from "../../types/windowCustomProps"
 
 
-export default function Bar({ gdkmonitor, menuState }: BarProps) {
+export default function Bar({ gdkmonitor, menuState }: WindowCustomProps) {
 
 
     return <window
