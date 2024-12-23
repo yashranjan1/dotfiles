@@ -1,0 +1,38 @@
+.profile-image {
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    min-height: 60px;
+    min-width: 60px;
+    margin-right: 10px;
+    background-image: url('/home/yash/.config/ags.new/image/profile');
+}
+
+.control-center-box {
+    background-color: #{$theme_bg_color};
+    padding: 20px;
+    border-radius: 7px;
+    margin: 10px 20px;
+    font-size: 16px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+}
+
+.control-center-box label {
+    color: #{$theme_fg_color};
+}
+
+.profile-sec {
+    margin-right: 100px;
+}
+
+.mr-7px {
+    margin-right: 7px;
+}
+
+.control-center-menu-btn {
+    background-color: #{$theme_alt_bg_color};
+    color: #{$theme_fg_color};
+    border-radius: 10px;
+    padding: 0 20px;
+    font-size: 24px;
+}

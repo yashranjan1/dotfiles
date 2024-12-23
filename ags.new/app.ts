@@ -3,7 +3,8 @@ import style from "./style.scss"
 import Bar from "@Bar/Bar"
 import NotificationCenter from "@Notif/NotificationCenter"
 import { Variable } from "astal"
-import PowerMenu from "@/PowerMenu/PowerMenu"
+import PowerMenu from "@Power/PowerMenu"
+import ControlCenter from "@CC/ControlCenter"
 
 const menuState = Variable<string>("none")
 
@@ -27,6 +28,9 @@ App.start({
         })
         App.get_monitors().map( monitor => {
             PowerMenu({ gdkmonitor: monitor, menuState: menuState })
+        })
+        App.get_monitors().map( monitor => {
+            ControlCenter({ gdkmonitor: monitor, menuState: menuState })
         })
     },
 })

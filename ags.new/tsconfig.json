@@ -32,6 +32,10 @@
                 "/home/yash/.config/ags.new/widget/PowerMenu/*",
                 "/home/yash/.config/ags.new/widget/PowerMenu/widget/*"
             ],
+            "@CC/*": [
+                "/home/yash/.config/ags.new/widget/ControlCenter/*",
+                "/home/yash/.config/ags.new/widget/ControlCenter/widget/*"
+            ],
         },
     }
 }
