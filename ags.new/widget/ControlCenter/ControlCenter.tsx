@@ -3,6 +3,8 @@ import { WindowCustomProps } from "../../types/windowCustomProps";
 import { bind } from "astal";
 import ProfileCard from "./widget/ProfileCard";
 import QuickMenu from "./widget/QuickMenu";
+import AudioSliders from "./widget/AudioSliders";
+import Options from "./widget/Options";
 
 export default function ControlCenter({ gdkmonitor, menuState }: WindowCustomProps) {
     return (
@@ -20,6 +22,12 @@ export default function ControlCenter({ gdkmonitor, menuState }: WindowCustomPro
                 <box>
                     <ProfileCard />
                     <QuickMenu />
+                </box>
+                <box className="audio-slider-container">
+                    <AudioSliders />
+                </box>
+                <box>
+                    <Options />
                 </box>
             </box>
         </window>

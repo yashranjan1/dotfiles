@@ -1,7 +1,7 @@
 import { bind, exec, Variable } from "astal";
 import { Gtk } from "astal/gtk3";
 
-const uptime = Variable<string>("").poll(1000, () => exec("uptime -p"))
+const uptime = Variable<string>("").poll(60000, () => exec("cat /proc/uptime"))
 
 export default function ProfileCard() {
 
@@ -15,7 +15,13 @@ export default function ProfileCard() {
                 valign={Gtk.Align.CENTER}
             >
                 <label label={userName} halign={Gtk.Align.START}/>
-                <label label={bind(uptime).as(p => `${p.split(" ")[1]}h ${p.split(" ")[3]}m`)} />
+                <label label={bind(uptime).as(t => {
+                    const time = Number.parseInt(t.split(".")[0]) / 60
+
+                    const h = Math.floor(time / 60)
+                    const m = Math.floor(time % 60)
+                    return `${h}h ${m < 10 ? "0" + m : m}m`
+                })}/>
             </box>
         </box>
     )

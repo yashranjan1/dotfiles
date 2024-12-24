@@ -3,8 +3,8 @@ window.PowerMenu {
 }
 
 .power-menu-box {
-    background-color: #{$theme_bg_color};
-    color: #{$theme_fg_color};
+    background-color: $theme_bg_color;
+    color: $theme_fg_color;
     padding: 7px;
     border-radius: 7px;
     margin: 10px 20px;
@@ -13,12 +13,12 @@ window.PowerMenu {
 }
 
 .power-menu-box button {
-    background-color: #{$theme_alt_bg_color};
+    background-color: $theme_alt_bg_color;
     padding-right: 20px;
 }
 
 .power-menu-box label {
-    color: #{$theme_fg_color};
+    color: $theme_fg_color;
     font-weight: bolder;
 }
 
@@ -27,7 +27,7 @@ window.PowerMenu {
 }
 
 .shutdown icon {
-    color: #{$red};
+    color: $red;
     margin: 0px 15px 0px 3px;
 }
 
@@ -36,7 +36,7 @@ window.PowerMenu {
 }
 
 .restart icon {
-    color: #{$yellow};
+    color: $yellow;
     margin: 0px 15px 0px 3px;
 }
 
@@ -45,11 +45,11 @@ window.PowerMenu {
 }
 
 .sleep icon {
-    color: #{$green};
+    color: $green;
     margin: 0px 15px 0px 3px;
 }
 
 .logout icon {
-    color: #{$purple};
+    color: $purple;
     margin: 0px 15px 0px 3px;
 }

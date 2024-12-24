@@ -9,7 +9,7 @@ export default function QuickMenu() {
             <button className="control-center-menu-btn mr-7px" onClick={() => exec("hyprctl dispatch exit")}>
                 <icon icon="system-log-out-symbolic" />
             </button>
-            <button className="control-center-menu-btn" onClick={() => exec("shutdown")}>
+            <button className="control-center-menu-btn" onClick={() => exec("shutdown now")}>
                 <icon icon="system-shutdown-symbolic" />
             </button>
         </box>

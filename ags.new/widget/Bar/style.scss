@@ -3,8 +3,8 @@ window.Bar {
     font-weight: 700;
 
     >centerbox {
-        background-color: #{$theme_bg_color};
-        color: #{$theme_fg_color};
+        background-color: $theme_bg_color;
+        color: $theme_fg_color;
         margin: 15px 15px 10px 15px;
         padding: 7px 10px;
         border-radius: 50px;
@@ -13,7 +13,7 @@ window.Bar {
 }
 
 icon.Logo {
-    color: #{$accent};
+    color: $accent;
     font-size: 20px;
     margin: 0px 10px;
 }
@@ -23,12 +23,12 @@ icon.Logo {
     min-width: 10px;
     border-radius: 5px;
     padding: 0px;
-    background-color: #{$inactive-ws};
+    background-color: $inactive-ws;
     margin: 10px 2px;
 }
 
 .focused {
-    background-color: #{$accent};
+    background-color: $accent;
     padding: 0px 15px;
 }
 
@@ -38,8 +38,8 @@ icon.Logo {
 }
 
 .date-btn {
-    background-color: #{$theme_alt_bg_color};
-    color: #{$theme_fg_color};
+    background-color: $theme_alt_bg_color;
+    color: $theme_fg_color;
     border-radius: 10px;
     margin: 0px;
     padding: 0px;
@@ -52,8 +52,8 @@ icon.Logo {
 }
 
 .control-center-btn {
-    background-color: #{$theme_bg_color};
-    color: #{$theme_fg_color};
+    background-color: $theme_bg_color;
+    color: $theme_fg_color;
     border-radius: 10px;
     margin: 0px;
     padding: 3px 10px;
@@ -65,6 +65,6 @@ icon.Logo {
 }
 
 .bg-active {
-    background-color: #{$accent};
-    color: #{$theme_bg_color};
+    background-color: $accent;
+    color: $theme_bg_color;
 }

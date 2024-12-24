@@ -2,9 +2,30 @@ import { App } from "astal/gtk3"
 import style from "./style.scss"
 import Bar from "@Bar/Bar"
 import NotificationCenter from "@Notif/NotificationCenter"
-import { Variable } from "astal"
+import { readFileAsync, Variable } from "astal"
 import PowerMenu from "@Power/PowerMenu"
 import ControlCenter from "@CC/ControlCenter"
+import { config, theme, themeOpts, wallpaper, wallpaperOpts } from "./variables/theme-variables"
+
+// config creation
+
+readFileAsync(`${SRC}/currentTheme.json`).then(data => {
+    const parsed: { name: string, wallpaper: string } = JSON.parse(data)
+    theme.set(parsed.name)
+    wallpaper.set(parsed.wallpaper)
+})
+
+readFileAsync(`${SRC}/themes.json`).then(data => {
+    const parsed: Array<Config> = JSON.parse(data)
+    config.set(parsed)
+
+    themeOpts.set(parsed.map(t => t.name))
+    wallpaperOpts.set(parsed.filter(t => t.name === theme.get())[0].wallpapers)
+
+    console.log(wallpaperOpts.get())
+})
+
+
 
 const menuState = Variable<string>("none")
 
