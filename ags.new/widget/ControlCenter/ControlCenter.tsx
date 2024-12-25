@@ -18,7 +18,7 @@ export default function ControlCenter({ gdkmonitor, menuState }: WindowCustomPro
             application={App}
         >
 
-            <box className={"control-center-box"} vertical>
+            <box className={"control-center-box shadow"} vertical>
                 <box>
                     <ProfileCard />
                     <QuickMenu />

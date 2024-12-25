@@ -12,7 +12,7 @@ export default function NotificationCenter({ gdkmonitor, menuState }: WindowCust
         anchor={Astal.WindowAnchor.TOP}
         visible={bind(menuState).as(s => s === `date-${gdkmonitor.get_model()}` ? true : false)}
         application={App}>
-            <box className={"notification-center-box"}>
+            <box className={"notification-center-box shadow"}>
                 <Calendar />
             </box>
     </window>

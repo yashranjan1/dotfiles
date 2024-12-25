@@ -20,7 +20,7 @@ export default function Bar({ gdkmonitor, menuState }: WindowCustomProps) {
             | Astal.WindowAnchor.LEFT
             | Astal.WindowAnchor.RIGHT}
         application={App}>
-        <centerbox>
+        <centerbox className={"shadow"}>
             <box>
                 <Arch />
                 <Workspaces />

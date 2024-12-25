@@ -1,3 +1,7 @@
+.shadow {
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+}
+
 window.Bar {
     background: transparent;
     font-weight: 700;
@@ -8,7 +12,6 @@ window.Bar {
         margin: 15px 15px 10px 15px;
         padding: 7px 10px;
         border-radius: 50px;
-        box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
     }
 }
 

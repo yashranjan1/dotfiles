@@ -16,7 +16,7 @@ export default function PowerMenu({ gdkmonitor, menuState }: WindowCustomProps) 
             Astal.WindowAnchor.RIGHT}
         visible={bind(menuState).as(s => s === `power-menu-button-${gdkmonitor.get_model()}` ? true : false)}
         application={App}>
-            <box className={"power-menu-box"} vertical>
+            <box className={"power-menu-box shadow"} vertical>
                 <Shutdown />
                 <Restart />
                 <Sleep />
