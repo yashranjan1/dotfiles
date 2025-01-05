@@ -1,0 +1,53 @@
+.app-launcher-box {
+    background-color: $theme_bg_color;
+    padding: 20px;
+    border-radius: 7px;
+    margin: 10px 20px;
+    font-size: 16px;
+    min-height: 100px;
+    min-width: 500px;
+}
+
+.app-button {
+    background-color: $theme_alt_bg_color;
+    color: $theme_fg_color;
+    border-radius: 10px;
+    font-size: 24px;
+
+    box {
+        border-radius: 10px;
+        color: $theme_fg_color;
+        
+    }
+
+    icon {
+        font-size: 54px;
+        margin-right: 10px;
+    }
+
+    .name {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .description {
+        font-size: 14px;
+        color: $theme_fg_color;
+    }
+}
+
+.entry {
+    background-color: $theme_alt_bg_color;
+    color: $theme_fg_color;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 18px;
+
+    placeholder {   
+        color: $theme_fg_color;
+    }
+}
+
+.entry:focus {
+    box-shadow: 0 0 0px 2px $inactive-ws;
+}

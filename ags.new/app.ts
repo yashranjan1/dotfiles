@@ -5,6 +5,7 @@ import { exec, readFileAsync, Variable } from "astal"
 import PowerMenu from "@Power/PowerMenu"
 import ControlCenter from "@CC/ControlCenter"
 import { config, theme, themeOpts, wallpaper, wallpaperOpts } from "./variables/theme-variables"
+import AppLauncher from "@/AppLauncher/AppLauncher"
 
 exec(["sass", "./style.scss", "/tmp/style.css"])
 
@@ -29,12 +30,17 @@ const menuState = Variable<string>("none")
 
 App.start({
     requestHandler(request: string, res: (response: any) => void) {
-        switch (request) {
-            case "toggle-notification-center-0":
-                App.toggle_window(`notification-center-${App.get_monitors()[0].get_model()}`)
-                res("done!")
+        
+        if (request.startsWith("app-launcher")) {
+            const newValue: string = "app-launcher-" + App.get_monitors()[Number(request.split("-")[2])].get_model()
+            if (newValue === menuState.get()) {
+                menuState.set("none")
+                res("closed!")
+                return
+            }
+            menuState.set(newValue)
+            res("opened!")
         }
-        res("unknown command")
     },
     css: "/tmp/style.css",
     icons: `${SRC}/icons`,
@@ -50,6 +56,9 @@ App.start({
         })
         App.get_monitors().map( monitor => {
             ControlCenter({ gdkmonitor: monitor, menuState: menuState })
+        }),
+        App.get_monitors().map( monitor => {
+            AppLauncher({ gdkmonitor: monitor, menuState: menuState })
         })
     },
 })
