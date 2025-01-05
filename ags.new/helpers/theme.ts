@@ -1,5 +1,4 @@
-import { exec, execAsync, writeFile, writeFileAsync } from "astal";
-import { exec as exec2 } from "astal/process";
+import { exec, writeFile } from "astal";
 import { config, theme, themeOpts, wallpaper, wallpaperOpts } from "../variables/theme-variables";
 import { App } from "astal/gtk3";
 
