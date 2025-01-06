@@ -18,23 +18,23 @@
                 "/usr/share/astal/gjs/*"
             ],
             "@/*": [
-                "/home/yash/.config/ags.new/widget/*"
+                "/home/yash/.config/ags/widget/*"
             ],
             "@Bar/*": [
-                "/home/yash/.config/ags.new/widget/Bar/*",
-                "/home/yash/.config/ags.new/widget/Bar/widget/*"
+                "/home/yash/.config/ags/widget/Bar/*",
+                "/home/yash/.config/ags/widget/Bar/widget/*"
             ],
             "@Notif/*": [
-                "/home/yash/.config/ags.new/widget/NotificationCenter/*",
-                "/home/yash/.config/ags.new/widget/NotificationCenter/widget/*"
+                "/home/yash/.config/ags/widget/NotificationCenter/*",
+                "/home/yash/.config/ags/widget/NotificationCenter/widget/*"
             ],
             "@Power/*": [
-                "/home/yash/.config/ags.new/widget/PowerMenu/*",
-                "/home/yash/.config/ags.new/widget/PowerMenu/widget/*"
+                "/home/yash/.config/ags/widget/PowerMenu/*",
+                "/home/yash/.config/ags/widget/PowerMenu/widget/*"
             ],
             "@CC/*": [
-                "/home/yash/.config/ags.new/widget/ControlCenter/*",
-                "/home/yash/.config/ags.new/widget/ControlCenter/widget/*"
+                "/home/yash/.config/ags/widget/ControlCenter/*",
+                "/home/yash/.config/ags/widget/ControlCenter/widget/*"
             ],
         },
     }

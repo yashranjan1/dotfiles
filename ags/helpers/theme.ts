@@ -2,6 +2,12 @@ import { exec, writeFile } from "astal";
 import { config, theme, themeOpts, wallpaper, wallpaperOpts } from "../variables/theme-variables";
 import { App } from "astal/gtk3";
 
+const changeWallpaper = ( path: string ) => {
+    wallpaper.set(path)
+    writeFile(`${SRC}/currentTheme.json`, JSON.stringify({ name: theme.get(), wallpaper: wallpaper.get() }))
+    exec(`../scripts/run_swww.sh ${wallpaper.get()}`)
+}
+
 const changeTheme = ( num: number ) => {
 
     // set variables
@@ -36,11 +42,11 @@ $purple: ${colors?.purple};`
 
     // write currentTheme.json
     wallpaperOpts.set(config.get().find(t => t.name === theme.get())?.wallpapers as string[])
-    wallpaper.set(wallpaperOpts.get()[0])
-    writeFile(`${SRC}/currentTheme.json`, JSON.stringify({ name: theme.get(), wallpaper: wallpaper.get() }))
+
+    changeWallpaper(wallpaperOpts.get()[0])
 
     // update wallpaper and rerun wal
     exec(`../scripts/run_swww.sh ${wallpaper.get()}`)
 }
 
-export { changeTheme }
+export { changeTheme, changeWallpaper }

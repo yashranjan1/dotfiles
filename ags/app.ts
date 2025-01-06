@@ -6,6 +6,7 @@ import PowerMenu from "@Power/PowerMenu"
 import ControlCenter from "@CC/ControlCenter"
 import { config, theme, themeOpts, wallpaper, wallpaperOpts } from "./variables/theme-variables"
 import AppLauncher from "@/AppLauncher/AppLauncher"
+import WallpaperSwitcher from "@/WallpaperSwitcher/WallpaperSwitcher"
 
 exec(["sass", "./style.scss", "/tmp/style.css"])
 
@@ -59,6 +60,9 @@ App.start({
         }),
         App.get_monitors().map( monitor => {
             AppLauncher({ gdkmonitor: monitor, menuState: menuState })
+        }),
+        App.get_monitors().map( monitor => {
+            WallpaperSwitcher({ gdkmonitor: monitor, menuState: menuState })
         })
     },
 })
