@@ -22,10 +22,6 @@
     color: $theme_fg_color;
 }
 
-.profile-sec {
-    margin-right: 100px;
-}
-
 .mr-7px {
     margin-right: 7px;
 }
@@ -40,7 +36,6 @@
 
 .audio-slider-container {
     padding: 15px 25px 15px 20px;
-    margin-top: 10px;
     border-radius: 7px;
     background-color: $theme_alt_bg_color;
 }
@@ -76,11 +71,10 @@
 }
 
 .option-container {
-    margin-top: 10px;
     background-color: $theme_alt_bg_color;
     border-radius: 7px;
-    min-width: 200px;
-    min-height: 35px;
+    min-width: 220px;
+    min-height: 45px;
     
 
     label {
@@ -90,6 +84,7 @@
 
     button {
         margin: 0;
+        padding: 0;
         background-color: transparent;
 
         icon {
@@ -97,6 +92,8 @@
         }
     }
 }
+
+
 
 .mr-10px {
     margin-right: 10px;
@@ -112,4 +109,59 @@
 
 .text-normal {
     color: $theme_fg_color;
+}
+
+box.mpris-player {
+    background-color: $theme_alt_bg_color;
+    border-radius: 7px;
+    padding: 10px;
+    
+    .cover-art {
+        background-size: cover;
+        background-position: center;
+        border-radius: 12px;
+        min-height: 110px;
+        min-width: 110px;
+        margin-right: 10px;
+        margin-bottom: 15px;
+    }
+
+    box.title {
+        label {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+    }
+
+    scale {
+        padding: 0;
+        margin: .4rem 0;
+
+        slider {
+            all: unset; 
+
+        }
+        trough {
+            background-color: color.adjust($theme_fg_color, $alpha: -0.5);
+            border-radius: 7px;
+        }
+    
+        highlight {
+            all: unset;
+            background-color: $accent;
+            min-height: 8px;
+            border-radius: 7px;
+        }
+    }
+    centerbox.actions {
+        min-width: 220px;
+
+        button {
+            background-color: $theme_alt_bg_color;
+            min-width: 0;
+            min-height: 0;
+            padding: .4rem;
+            margin: 0 .2rem;
+        }
+    }
 }

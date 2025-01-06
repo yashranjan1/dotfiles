@@ -1,10 +1,11 @@
-import { App, Astal } from "astal/gtk3";
+import { App, Astal, Gtk } from "astal/gtk3";
 import { WindowCustomProps } from "../../types/windowCustomProps";
 import { bind } from "astal";
 import ProfileCard from "./widget/ProfileCard";
 import QuickMenu from "./widget/QuickMenu";
 import AudioSliders from "./widget/AudioSliders";
 import Options from "./widget/Options";
+import MprisPlayers from "./widget/MprisPlayers";
 
 export default function ControlCenter({ gdkmonitor, menuState }: WindowCustomProps) {
     return (
@@ -18,7 +19,11 @@ export default function ControlCenter({ gdkmonitor, menuState }: WindowCustomPro
             application={App}
         >
 
-            <box className={"control-center-box shadow"} vertical>
+            <box 
+                className={"control-center-box shadow"} 
+                vertical
+                spacing={10}
+            >
                 <box>
                     <ProfileCard />
                     <QuickMenu />
@@ -28,6 +33,9 @@ export default function ControlCenter({ gdkmonitor, menuState }: WindowCustomPro
                 </box>
                 <box>
                     <Options />
+                </box>
+                <box>
+                    <MprisPlayers />
                 </box>
             </box>
         </window>

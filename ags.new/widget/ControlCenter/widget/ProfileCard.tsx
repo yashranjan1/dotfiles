@@ -8,7 +8,7 @@ export default function ProfileCard() {
     const userName = exec('whoami')
 
     return (
-        <box className={"profile-sec"}>
+        <box hexpand={true}>
             <box className="profile-image" />
             <box vertical 
                 className="" 
