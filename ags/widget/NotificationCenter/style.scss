@@ -32,3 +32,20 @@
 .calendar.header {
     font-size: 50px;
 }
+
+.notif-scroll {
+
+    viewport {
+        border: none;
+    }
+
+    min-height: 300px;    
+    min-width: 350px;
+    
+}
+
+.notification-header {
+    font-size: 24px;
+    margin-top: 5px;
+    font-weight: bold;
+}

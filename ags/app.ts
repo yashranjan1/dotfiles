@@ -7,6 +7,7 @@ import ControlCenter from "@CC/ControlCenter"
 import { config, theme, themeOpts, wallpaper, wallpaperOpts } from "./variables/theme-variables"
 import AppLauncher from "@/AppLauncher/AppLauncher"
 import WallpaperSwitcher from "@/WallpaperSwitcher/WallpaperSwitcher"
+import NotificationPopups from "@/Notification/Popups"
 
 exec(["sass", "./style.scss", "/tmp/style.css"])
 
@@ -31,7 +32,7 @@ const menuState = Variable<string>("none")
 
 App.start({
     requestHandler(request: string, res: (response: any) => void) {
-        
+
         if (request.startsWith("app-launcher")) {
             const newValue: string = "app-launcher-" + App.get_monitors()[Number(request.split("-")[2])].get_model()
             if (newValue === menuState.get()) {
@@ -46,23 +47,24 @@ App.start({
     css: "/tmp/style.css",
     icons: `${SRC}/icons`,
     main() {
-        App.get_monitors().map( monitor => {
+        App.get_monitors().map(monitor => {
             Bar({ gdkmonitor: monitor, menuState: menuState })
         })
-        App.get_monitors().map( monitor => {
+        App.get_monitors().map(monitor => {
             NotificationCenter({ gdkmonitor: monitor, menuState: menuState })
         })
-        App.get_monitors().map( monitor => {
+        App.get_monitors().map(monitor => {
             PowerMenu({ gdkmonitor: monitor, menuState: menuState })
         })
-        App.get_monitors().map( monitor => {
+        App.get_monitors().map(monitor => {
             ControlCenter({ gdkmonitor: monitor, menuState: menuState })
         }),
-        App.get_monitors().map( monitor => {
+        App.get_monitors().map(monitor => {
             AppLauncher({ gdkmonitor: monitor, menuState: menuState })
         }),
-        App.get_monitors().map( monitor => {
+        App.get_monitors().map(monitor => {
             WallpaperSwitcher({ gdkmonitor: monitor, menuState: menuState })
-        })
+        }),
+        NotificationPopups(App.get_monitors()[0])
     },
 })
