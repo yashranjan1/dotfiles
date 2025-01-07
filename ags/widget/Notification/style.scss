@@ -122,3 +122,13 @@ eventbox.Notification {
         }
     }
 }
+
+.close-notif-button-stack{
+    background-color: $theme_alt_bg_color;
+    font-size: 18px;
+}
+
+.close-notif-button-popup{
+    background-color: $theme_bg_color;
+    font-size: 18px;
+}

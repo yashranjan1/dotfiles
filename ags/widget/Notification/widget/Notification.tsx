@@ -57,7 +57,7 @@ export default function Notification(props: Props) {
                     halign={END}
                     label={time(n.time)}
                 />
-                <button onClicked={() => n.dismiss()}>
+                <button onClicked={() => n.dismiss()} className={"close-notif-button-popup"}>
                     <icon icon="window-close-symbolic" />
                 </button>
             </box>

@@ -2,9 +2,9 @@
     {
         "name": "Nord",
         "wallpapers": [
-            "/home/yash/.config/wallpapers/chainsaw_nord.png",
-            "/home/yash/.config/wallpapers/your_name.png",
-            "/home/yash/.config/wallpapers/32.png"
+            "/home/yash/.config/wallpapers/Nord/chainsaw_nord.png",
+            "/home/yash/.config/wallpapers/Nord/your_name.png",
+            "/home/yash/.config/wallpapers/Nord/32.png"
         ],
         "colors": {
             "accent": "#7FA7C4",
@@ -17,12 +17,11 @@
             "green": "#A3BE8C",
             "purple": "#B48EAD"
         }
-    }, 
+    },
     {
         "name": "Gruvbox",
         "wallpapers": [
-            "/home/yash/.config/wallpapers/b-306.jpg",
-            "/home/yash/.config/wallpapers/wallpaper-theme-converter.png"
+            "/home/yash/.config/wallpapers/Gruvbox/b-306.jpg"
         ],
         "colors": {
             "accent": "#DC9547",
@@ -35,11 +34,11 @@
             "green": "#b8bb26",
             "purple": "#d3869b"
         }
-    }, 
+    },
     {
         "name": "Rain",
         "wallpapers": [
-            "/home/yash/.config/wallpapers/rain-wp.png"
+            "/home/yash/.config/wallpapers/Rain/rain-wp.png"
         ],
         "colors": {
             "accent": "#A64C52",
@@ -47,6 +46,31 @@
             "theme_bg_color": "#030A13",
             "inactiveWs": "#607587",
             "theme_alt_bg_color": "#395166",
+            "red": "#fb4934",
+            "yellow": "#fabd2f",
+            "green": "#b8bb26",
+            "purple": "#d3869b"
+        }
+    },
+    {
+        "name": "Catppuccin",
+        "wallpapers": [
+            "/home/yash/.config/wallpapers/Catppuccin/retro-mario.png",
+            "/home/yash/.config/wallpapers/Catppuccin/switch_swirl.jpg",
+            "/home/yash/.config/wallpapers/Catppuccin/raiden_cat.png",
+            "/home/yash/.config/wallpapers/Catppuccin/frieren.jpeg",
+            "/home/yash/.config/wallpapers/Catppuccin/waves.jpg",
+            "/home/yash/.config/wallpapers/Catppuccin/spooky_spill.jpg",
+            "/home/yash/.config/wallpapers/Catppuccin/GMJLlQ9qg5.jpg",
+            "/home/yash/.config/wallpapers/Catppuccin/wallpaper-theme-converter1.png",
+            "/home/yash/.config/wallpapers/Catppuccin/wallpaper-theme-converter.png"
+        ],
+        "colors": {
+            "accent": "#dac7f2",
+            "theme_fg_color": "#b0bbc3",
+            "theme_bg_color": "#0e0f17",
+            "inactiveWs": "#b0bbc3",
+            "theme_alt_bg_color": "#292c3c",
             "red": "#fb4934",
             "yellow": "#fabd2f",
             "green": "#b8bb26",
