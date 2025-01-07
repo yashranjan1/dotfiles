@@ -1,36 +1,10 @@
-.notification-center-box {
-    background-color: $theme_bg_color;
-    border-radius: 10px;
-    padding: 10px;
+.notification-center-box { 
     margin: 10px 20px;
-}
-
-.calendar {
-    background-color: $theme_alt_bg_color;
-    color: $theme_fg_color;
-    border-radius: 10px;
-    margin: 0px;
+    background-color: $theme_bg_color;
+    min-width: 330px;
+    min-height: 800px;
     padding: 10px;
-}
-
-.calendar:selected{
-    background-color: $accent;
-    color: $theme_bg_color;
-}
-
-.calendar:indeterminate {
-    color: $theme_bg_color;
-}
-
-.calendar.highlight, .calendar.header, .calendar.button {
-    background-color: transparent;
-    border: none;
-    color: $accent;
-    font-weight: 900;
-}
-
-.calendar.header {
-    font-size: 50px;
+    border-radius: 7px;
 }
 
 .notif-scroll {
@@ -40,12 +14,20 @@
     }
 
     min-height: 300px;    
-    min-width: 350px;
+    min-width: 300px;
     
 }
 
 .notification-header {
     font-size: 24px;
-    margin-top: 5px;
+    margin: 10px;
     font-weight: bold;
+}
+
+.clear-all-btn {
+    background-color: $theme_alt_bg_color;
+    color: $theme_fg_color;
+    border-radius: 10px;
+    padding: 0px 20px;    
+    margin: 5px 0;
 }

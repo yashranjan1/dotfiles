@@ -5,17 +5,12 @@
 }
 
 // https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
-$error: red;
 
 window.NotificationPopups {
     all: unset;
 }
 
 eventbox.Notification {
-
-    &:first-child>box {
-        margin-top: 1rem;
-    }
 
     &:last-child>box {
         margin-bottom: 1rem;
@@ -26,22 +21,22 @@ eventbox.Notification {
         min-width: 300px;
         border-radius: 13px;
         background-color: $theme_bg_color;
-        margin: .5rem 1rem .5rem 1rem;
+        margin: 0rem 1.5rem .5rem 1rem;
         box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
     }
 
     &.critical>box {
-        border: 1pt solid gtkalpha($error, .4);
+        border: 1pt solid gtkalpha($red, .4);
 
         .header {
 
             .app-name {
-                color: gtkalpha($error, .8);
+                color: gtkalpha($red, .8);
 
             }
 
             .app-icon {
-                color: gtkalpha($error, .6);
+                color: gtkalpha($red, .6);
             }
         }
     }

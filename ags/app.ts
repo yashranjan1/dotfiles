@@ -1,6 +1,5 @@
 import { App } from "astal/gtk3"
 import Bar from "@Bar/Bar"
-import NotificationCenter from "@Notif/NotificationCenter"
 import { exec, Variable } from "astal"
 import PowerMenu from "@Power/PowerMenu"
 import ControlCenter from "@CC/ControlCenter"
@@ -8,6 +7,8 @@ import AppLauncher from "@/AppLauncher/AppLauncher"
 import WallpaperSwitcher from "@/WallpaperSwitcher/WallpaperSwitcher"
 import NotificationPopups from "@/Notification/Popups"
 import { readConfig, readCurrentTheme } from "./helpers/init"
+import CalendarCenter from "@/CalendarCenter/CalendarCenter"
+import NotificationCenter from "@/NotificationCenter/NotificationCenter"
 
 exec(["sass", "./style.scss", "/tmp/style.css"])
 
@@ -38,7 +39,7 @@ App.start({
             Bar({ gdkmonitor: monitor, menuState: menuState })
         })
         App.get_monitors().map(monitor => {
-            NotificationCenter({ gdkmonitor: monitor, menuState: menuState })
+            CalendarCenter({ gdkmonitor: monitor, menuState: menuState })
         })
         App.get_monitors().map(monitor => {
             PowerMenu({ gdkmonitor: monitor, menuState: menuState })
@@ -51,6 +52,9 @@ App.start({
         })
         App.get_monitors().map(monitor => {
             WallpaperSwitcher({ gdkmonitor: monitor, menuState: menuState })
+        })
+        App.get_monitors().map(monitor => {
+            NotificationCenter({ gdkmonitor: monitor, menuState: menuState })
         })
         NotificationPopups(App.get_monitors()[0])
     },

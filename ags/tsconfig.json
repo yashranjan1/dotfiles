@@ -24,9 +24,9 @@
                 "/home/yash/.config/ags/widget/Bar/*",
                 "/home/yash/.config/ags/widget/Bar/widget/*"
             ],
-            "@Notif/*": [
-                "/home/yash/.config/ags/widget/NotificationCenter/*",
-                "/home/yash/.config/ags/widget/NotificationCenter/widget/*"
+            "@Calendar/*": [
+                "/home/yash/.config/ags/widget/CalendarCenter/*",
+                "/home/yash/.config/ags/widget/CalendarCenter/widget/*"
             ],
             "@Power/*": [
                 "/home/yash/.config/ags/widget/PowerMenu/*",

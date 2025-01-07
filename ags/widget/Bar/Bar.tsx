@@ -6,6 +6,7 @@ import ControlCenter from "@Bar/ControlCenter"
 import PowerMenu from "@Bar/PowerMenu"
 import WallpaperCenter from "@Bar/WallpaperCenter"
 import { WindowCustomProps } from "../../types/windowCustomProps"
+import Notifications from "./widget/Notifications"
 
 
 export default function Bar({ gdkmonitor, menuState }: WindowCustomProps) {
@@ -30,6 +31,7 @@ export default function Bar({ gdkmonitor, menuState }: WindowCustomProps) {
             </box>
             <box hexpand halign={Gtk.Align.END} >
                 <WallpaperCenter monitor={`${gdkmonitor.get_model()}`} state={menuState}/>
+                <Notifications monitor={`${gdkmonitor.get_model()}`} state={menuState}/>
                 <ControlCenter monitor={`${gdkmonitor.get_model()}`} state={menuState}/>
                 <PowerMenu monitor={`${gdkmonitor.get_model()}`} state={menuState}/>
             </box>
