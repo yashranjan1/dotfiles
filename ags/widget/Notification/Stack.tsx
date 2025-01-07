@@ -1,6 +1,6 @@
 import { Astal, Gtk, Gdk, Widget } from "astal/gtk3"
 import Notifd from "gi://AstalNotifd"
-import Notification from "./widget/Notification"
+import Notification from "./widget/StackNotif"
 import { type Subscribable } from "astal/binding"
 import { Variable, bind, timeout } from "astal"
 

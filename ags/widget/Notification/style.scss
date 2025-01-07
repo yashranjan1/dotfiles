@@ -12,17 +12,24 @@ window.NotificationPopups {
 
 eventbox.Notification {
 
+    .popup{
+        background-color: $theme_bg_color;
+        min-width: 300px;
+    }
+
+    .stack{
+        background-color: $theme_alt_bg_color;
+        min-width: 500px;
+    }
+
     &:last-child>box {
         margin-bottom: 1rem;
     }
 
     // eventboxes can not take margins so we style its inner box instead
     >box {
-        min-width: 300px;
         border-radius: 13px;
-        background-color: $theme_bg_color;
         margin: 0rem 1.5rem .5rem 1rem;
-        box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
     }
 
     &.critical>box {

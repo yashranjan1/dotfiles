@@ -1,0 +1,9 @@
+config-file = colors
+
+window-decoration = false
+window-padding-x = 10
+window-padding-y = 15
+
+
+background-opacity = 0.8
+

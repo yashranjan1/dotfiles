@@ -38,7 +38,7 @@ export default function Notification(props: Props) {
         className={`Notification ${urgency(n)}`}
         setup={setup}
         onHoverLost={onHoverLost}>
-        <box vertical className={"shadow popup"}>
+        <box vertical className={"stack"}>
             <box className="header">
                 {(n.appIcon || n.desktopEntry) && <icon
                     className="app-icon"
@@ -88,7 +88,7 @@ export default function Notification(props: Props) {
                         useMarkup
                         halign={START}
                         xalign={0}
-                        justifyFill
+                        truncate
                         label={n.body}
                     />}
                 </box>
