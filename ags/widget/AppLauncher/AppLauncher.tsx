@@ -66,9 +66,11 @@ export default function AppLauncher({ gdkmonitor, menuState }: WindowCustomProps
                 />
 
                 <box spacing={6} vertical>
-                    {list.as(list => list.map(app => (
-                        <AppButton app={app} hide={hide} />
-                    )))}
+                    {list.as(list => list.map(app => {
+                        return (
+                            <AppButton app={app} hide={hide} />
+                        )
+                    }))}
                 </box>
             </box>
         </window>
