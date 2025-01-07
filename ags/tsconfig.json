@@ -1,0 +1,41 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "strict": true,
+        "target": "ES2022",
+        "module": "ES2022",
+        "moduleResolution": "Bundler",
+        // "checkJs": true,
+        // "allowJs": true,
+        "jsx": "react-jsx",
+        "jsxImportSource": "/usr/share/astal/gjs/gtk3",
+        "paths": {
+            "astal": [
+                "/usr/share/astal/gjs"
+            ],
+            "astal/*": [
+                "/usr/share/astal/gjs/*"
+            ],
+            "@/*": [
+                "/home/yash/.config/ags/widget/*"
+            ],
+            "@Bar/*": [
+                "/home/yash/.config/ags/widget/Bar/*",
+                "/home/yash/.config/ags/widget/Bar/widget/*"
+            ],
+            "@Calendar/*": [
+                "/home/yash/.config/ags/widget/CalendarCenter/*",
+                "/home/yash/.config/ags/widget/CalendarCenter/widget/*"
+            ],
+            "@Power/*": [
+                "/home/yash/.config/ags/widget/PowerMenu/*",
+                "/home/yash/.config/ags/widget/PowerMenu/widget/*"
+            ],
+            "@CC/*": [
+                "/home/yash/.config/ags/widget/ControlCenter/*",
+                "/home/yash/.config/ags/widget/ControlCenter/widget/*"
+            ],
+        },
+    }
+}

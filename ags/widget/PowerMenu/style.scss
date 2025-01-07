@@ -1,0 +1,54 @@
+window.PowerMenu {
+    background-color: transparent;
+}
+
+.power-menu-box {
+    background-color: $theme_bg_color;
+    color: $theme_fg_color;
+    padding: 7px;
+    border-radius: 7px;
+    margin: 10px 20px;
+    font-size: 16px;
+}
+
+.power-menu-box button {
+    background-color: $theme_alt_bg_color;
+    padding-right: 20px;
+}
+
+.power-menu-box label {
+    color: $theme_fg_color;
+    font-weight: bolder;
+}
+
+.shutdown {
+    margin-bottom: 7px;
+}
+
+.shutdown icon {
+    color: $red;
+    margin: 0px 15px 0px 3px;
+}
+
+.restart {
+    margin-bottom: 7px;
+}
+
+.restart icon {
+    color: $yellow;
+    margin: 0px 15px 0px 3px;
+}
+
+.sleep {
+    margin-bottom: 7px;
+}
+
+.sleep icon {
+    color: $green;
+    margin: 0px 15px 0px 3px;
+}
+
+.logout icon {
+    color: $purple;
+    margin: 0px 15px 0px 3px;
+}

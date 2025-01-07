@@ -1,0 +1,73 @@
+.shadow {
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+}
+
+window.Bar {
+    background: transparent;
+    font-weight: 700;
+
+    >centerbox {
+        background-color: $theme_bg_color;
+        color: $theme_fg_color;
+        margin: 15px 15px 10px 15px;
+        padding: 7px 10px;
+        border-radius: 50px;
+    }
+}
+
+icon.Logo {
+    color: $accent;
+    font-size: 20px;
+    margin: 0px 10px;
+}
+
+.workspace-tab{
+    min-height: 10px;
+    min-width: 10px;
+    border-radius: 5px;
+    padding: 0px;
+    background-color: $inactive-ws;
+    margin: 10px 2px;
+}
+
+.focused {
+    background-color: $accent;
+    padding: 0px 15px;
+}
+
+.focused-client {
+    font-size: 14px;
+    margin: 0px 10px;
+}
+
+.date-btn {
+    background-color: $theme_alt_bg_color;
+    color: $theme_fg_color;
+    border-radius: 10px;
+    margin: 0px;
+    padding: 0px;
+
+    .date {
+        font-weight: bolder;
+        font-size: 15px;
+        margin: 0px 10px;
+    }
+}
+
+.control-center-btn {
+    background-color: $theme_bg_color;
+    color: $theme_fg_color;
+    border-radius: 10px;
+    margin: 0px;
+    padding: 3px 10px;
+    font-size: 18px;
+}
+
+.mr-8px {
+    margin-right: 8px;
+}
+
+.bg-active {
+    background-color: $accent;
+    color: $theme_bg_color;
+}

@@ -1,0 +1,33 @@
+.notification-center-box { 
+    margin: 10px 20px;
+    background-color: $theme_bg_color;
+    min-width: 330px;
+    min-height: 800px;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.notif-scroll {
+
+    viewport {
+        border: none;
+    }
+
+    min-height: 300px;    
+    min-width: 300px;
+    
+}
+
+.notification-header {
+    font-size: 24px;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.clear-all-btn {
+    background-color: $theme_alt_bg_color;
+    color: $theme_fg_color;
+    border-radius: 10px;
+    padding: 0px 20px;    
+    margin: 5px 0;
+}
