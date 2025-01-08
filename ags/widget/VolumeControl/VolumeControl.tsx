@@ -31,6 +31,9 @@ export default function VolumeControl({ gdkmonitor, menuState }: WindowCustomPro
                         <icon icon={"go-previous-symbolic"} />
                     </button>
                     <label label={"Volume Control"} hexpand xalign={0}/>
+                    <button onClick={() => menuState.set(`none`)}>
+                        <icon icon={"close-symbolic"} />
+                    </button>
                 </box>
                 <box className={"volume-control-box"} 
                     vertical 
@@ -38,7 +41,7 @@ export default function VolumeControl({ gdkmonitor, menuState }: WindowCustomPro
                     spacing={10}
                 >
                     <box className="app-vol" css="min-width: 140px">
-                        <button onClick={() => menuState.set(`volume-control-${gdkmonitor.get_model()}`)}>
+                        <button onClick={() => speaker.get_mute() ? speaker.set_mute(false) : speaker.set_mute(true)}>
                             <icon icon={bind(speaker, "volumeIcon")} />
                         </button>
                         <slider
