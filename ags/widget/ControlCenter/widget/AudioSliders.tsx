@@ -1,14 +1,15 @@
-import { bind } from "astal"
+import { bind, Variable } from "astal"
 import Wp from "gi://AstalWp"
+import { WindowCustomProps } from "../../../types/windowCustomProps"
 
-export default function AudioSliders() {
+export default function AudioSliders({ gdkmonitor, menuState }: WindowCustomProps) {
     const speaker = Wp.get_default()?.audio.defaultSpeaker!
     const mic = Wp.get_default()?.audio.defaultMicrophone!
 
     return (
         <box vertical>
             <box className="audio-slider" css="min-width: 140px">
-                <button onClick={() => speaker.get_mute() ? speaker.set_mute(false) : speaker.set_mute(true)}>
+                <button onClick={() => menuState.set(`volume-control-${gdkmonitor.get_model()}`)}>
                     <icon icon={bind(speaker, "volumeIcon")} />
                 </button>
                 <slider

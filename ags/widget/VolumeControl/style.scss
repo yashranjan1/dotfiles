@@ -1,0 +1,70 @@
+@use "sass:color";
+
+.volume-control-window {
+    padding: 20px;
+    background-color: $theme_bg_color;
+    min-height: 100px;
+    min-width: 400px;
+    border-radius: 10px;
+    margin: 10px 20px;
+}
+
+.app-vol {
+    padding: 10px;
+    background-color: $theme_alt_bg_color;
+    border-radius: 10px;
+
+    button{
+        background-color: transparent;
+    }
+
+    icon {
+        font-size: 24px;
+        padding: 0px;
+    }
+
+    scale {
+        * {
+            all: unset;
+        }
+    
+        trough {
+            background-color: color.adjust($theme_fg_color, $alpha: -0.5);
+            border-radius: 7px;
+        }
+    
+        highlight {
+            background-color: $accent;
+            min-height: .8em;
+            border-radius: 7px;
+        }
+    
+        slider {
+            background-color: $theme_fg_color;
+            border-radius: 7px;
+            min-height: 1em;
+            min-width: 1em;
+            margin: -.2em;
+            box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+        }
+    }
+}
+
+.volume-control-header {
+    label {
+        font-size: 20px;
+        font-weight: bold;
+        color: $theme_fg_color;
+        padding: 0px;
+    }
+    button {
+        background-color: transparent;
+        border: none;
+        padding: 0px;
+
+        icon {
+            font-size: 24px;
+            padding: 0px;
+        }
+    }
+}

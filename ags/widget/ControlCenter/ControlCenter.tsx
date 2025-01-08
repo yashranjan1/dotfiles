@@ -29,7 +29,7 @@ export default function ControlCenter({ gdkmonitor, menuState }: WindowCustomPro
                     <QuickMenu />
                 </box>
                 <box className="audio-slider-container">
-                    <AudioSliders />
+                    <AudioSliders menuState={menuState} gdkmonitor={gdkmonitor} />
                 </box>
                 <box>
                     <Options />

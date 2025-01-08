@@ -21,7 +21,12 @@
     {
         "name": "Gruvbox",
         "wallpapers": [
-            "/home/yash/.config/wallpapers/Gruvbox/b-306.jpg"
+            "/home/yash/.config/wallpapers/Gruvbox/b-306.jpg",
+            "/home/yash/.config/wallpapers/Gruvbox/b-476.jpg",
+            "/home/yash/.config/wallpapers/Gruvbox/chinese-hills.jpg",
+            "/home/yash/.config/wallpapers/Gruvbox/g6kykcbhf1v71-01_gruvbox.png",
+            "/home/yash/.config/wallpapers/Gruvbox/girl-reading-book.png",
+            "/home/yash/.config/wallpapers/Gruvbox/gruv-material.png"
         ],
         "colors": {
             "accent": "#DC9547",

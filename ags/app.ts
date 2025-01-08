@@ -1,6 +1,6 @@
 import { App } from "astal/gtk3"
 import Bar from "@Bar/Bar"
-import { exec, readFileAsync, Variable } from "astal"
+import { bind, exec, readFileAsync, Variable } from "astal"
 import PowerMenu from "@Power/PowerMenu"
 import ControlCenter from "@CC/ControlCenter"
 import AppLauncher from "@/AppLauncher/AppLauncher"
@@ -9,18 +9,19 @@ import NotificationPopups from "@/Notification/Popups"
 import CalendarCenter from "@/CalendarCenter/CalendarCenter"
 import NotificationCenter from "@/NotificationCenter/NotificationCenter"
 import { config, theme, themeOpts, wallpaper, wallpaperOpts } from "./variables/theme-variables"
+import VolumeControl from "@/VolumeControl/VolumeControl"
 
 exec(["sass", "./style.scss", "/tmp/style.css"])
 
 // config creation
 
 
-await readFileAsync(`${SRC}/currentTheme.json`).then( data => {
+await readFileAsync(`${SRC}/currentTheme.json`).then(data => {
     const parsed: { name: string, wallpaper: string } = JSON.parse(data)
     theme.set(parsed.name)
     wallpaper.set(parsed.wallpaper)
 })
-   
+
 
 
 await readFileAsync(`${SRC}/themes.json`).then(data => {
@@ -32,7 +33,11 @@ await readFileAsync(`${SRC}/themes.json`).then(data => {
 })
 
 
+
+
+
 const menuState = Variable<string>("none")
+
 
 App.start({
     requestHandler(request: string, res: (response: any) => void) {
@@ -71,6 +76,9 @@ App.start({
         })
         App.get_monitors().map(monitor => {
             NotificationCenter({ gdkmonitor: monitor, menuState: menuState })
+        })
+        App.get_monitors().map(monitor => {
+            VolumeControl({ gdkmonitor: monitor, menuState: menuState })
         })
         NotificationPopups(App.get_monitors()[0])
     },
