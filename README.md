@@ -24,6 +24,7 @@ You need to have these to make sure everything in my dotfiles works for you.
 - [v4l2loopback(for virtual cam for screensharing)](https://wiki.archlinux.org/title/V4l2loopback)
 - gnome-bluetooth-3.0
 - blueberry (for bluetooth)
+- NetworkManager
 - [pywal](https://github.com/dylanaraps/pywal)
 - [grim](https://github.com/emersion/grim)
 - [swappy](https://github.com/jtheoof/swappy)
@@ -31,6 +32,7 @@ You need to have these to make sure everything in my dotfiles works for you.
 - [swww](https://github.com/LGFae/swww)
 - JetBrains Mono NF (optional)
 - Oh-my-zsh (optional)
+
 
 ## Usage
 
