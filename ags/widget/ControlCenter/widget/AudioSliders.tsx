@@ -9,7 +9,7 @@ export default function AudioSliders({ gdkmonitor, menuState }: WindowCustomProp
     return (
         <box vertical>
             <box className="audio-slider" css="min-width: 140px">
-                <button onClick={() => menuState.set(`volume-control-${gdkmonitor.get_model()}`)}>
+                <button onClick={() => menuState.set(`control-center-button-${gdkmonitor.get_model()}-volume`)}>
                     <icon icon={bind(speaker, "volumeIcon")} />
                 </button>
                 <slider

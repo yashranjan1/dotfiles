@@ -1,0 +1,53 @@
+.wifi-menu-box {
+    background-color: $theme_bg_color;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 20px;
+    min-width: 400px;
+}
+
+.wifi-menu-header {
+    font-size: 24px;
+    margin: 10px 0;
+    font-weight: bold;
+
+    button {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        margin: 0;
+
+        icon {
+            color: $theme_fg_color;
+            font-size: 24px;
+            margin: 0 5px;
+        }
+    }
+
+}
+
+.wifi-label {
+    background-color: $theme_alt_bg_color;
+    border-radius: 7px;
+    padding: 5px 10px;
+    min-width: 300px;
+
+    icon {
+        color: $theme_fg_color;
+        font-size: 24px;
+        margin: 10px;
+    }
+    button{
+        background-color: transparent;
+    }
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { -gtk-icon-transform: rotate(-1turn); }
+}
+
+ 

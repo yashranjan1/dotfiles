@@ -34,7 +34,7 @@ export default function ControlCenter({ monitor, state }: MenuInput) {
 
     return (
         <button 
-            className={bind(state).as(s => s === `control-center-button-${monitor}` ? "bg-active control-center-btn" : "control-center-btn")}
+            className={bind(state).as(s => s.startsWith(`control-center-button-${monitor}`) ? "bg-active control-center-btn" : "control-center-btn")}
             onClick={() => {
                 if (state.get() === `control-center-button-${monitor}`) {
                     state.set("none")

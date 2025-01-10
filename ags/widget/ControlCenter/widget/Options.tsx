@@ -1,14 +1,15 @@
-import { bind } from "astal";
+import { bind, execAsync } from "astal";
 import { theme } from "../../../variables/theme-variables";
 import { changeTheme } from "../../../helpers/theme";
 import Bluetooth from "gi://AstalBluetooth"
 import Wifi from "gi://AstalNetwork"
 import VirtualCam from "../../../bindings/v4l2loopback";
 import { Gtk } from "astal/gtk3";
+import { WindowCustomProps } from "../../../types/windowCustomProps";
 
 
 function ThemeSwitcher() {
-    return <centerbox className={"option-container"} css="">
+    return <centerbox className={"option-container"} css="" hexpand>
         <button
             onClick={() => changeTheme(-1)}
         >
@@ -27,12 +28,14 @@ function VirtualCamButton() {
     const loopback = VirtualCam.get_default()
     return <box 
         className={bind(loopback, "state").as(state => state ? "option-container bg-active" : "option-container")}
+        hexpand
         >
             <button 
                 className={bind(loopback, "state").as(state => state ? "option-container bg-active" : "option-container")}
                 onClick={() => {
                     loopback.toggle_state()
                 }}
+                hexpand
             >
                 <box>
                     <icon icon="video-display-symbolic" className="ml-15px mr-10px" />
@@ -47,8 +50,12 @@ function VirtualCamButton() {
     </box>
 }
 
-function WifiButton() {
+function WifiButton({ menuState, gdkmonitor }: WindowCustomProps) {
     const { wifi } = Wifi.get_default()
+
+
+    
+
     return <box className={bind(wifi, "enabled").as(enabled => enabled ? "option-container bg-active" : "option-container")}>
         <button 
             className={bind(wifi, "enabled").as(enabled => enabled ? "option-container bg-active" : "option-container")}
@@ -74,18 +81,23 @@ function WifiButton() {
                 />
             </box>
         </button>
+        <button className={"open-menu-btn"} onClick={() => menuState.set(`control-center-button-${gdkmonitor.get_model()}-wifi`)}>
+            <icon icon="pan-end-symbolic" />
+        </button>
     </box>
 }
 
-function BluetoothButton() {
+function BluetoothButton({ menuState, gdkmonitor }: WindowCustomProps) {
     const bluetooth = Bluetooth.get_default()
 
     return <box 
-    className={bind(bluetooth, "isPowered").as(enabled => enabled ? "option-container bg-active" : "option-container")}>
+        className={bind(bluetooth, "isPowered").as(enabled => enabled ? "option-container bg-active" : "option-container")}
+        hexpand
+        >
         <button 
             className={bind(bluetooth, "isPowered").as(enabled => enabled ? "option-container bg-active" : "option-container")}
             onClick={() => {
-                bluetooth.isPowered = !bluetooth.isPowered
+                bluetooth.toggle()
             }}
         >
             <box>
@@ -102,10 +114,20 @@ function BluetoothButton() {
                 />
             </box>
         </button>
+        <button 
+            className={"open-menu-btn"} 
+            onClick={() => {
+                menuState.set(`none`)
+                execAsync("blueberry")
+            }}
+            hexpand
+        >
+            <icon icon="pan-end-symbolic" />
+        </button>
     </box>
 }
 
-export default function Options() {  
+export default function Options({ menuState, gdkmonitor }: WindowCustomProps) {
 
     return (
         <box vertical spacing={10}>
@@ -114,8 +136,8 @@ export default function Options() {
                 <VirtualCamButton />
             </box>
             <box spacing={10}>
-                <WifiButton />
-                <BluetoothButton />
+                <WifiButton menuState={menuState} gdkmonitor={gdkmonitor}/>
+                <BluetoothButton menuState={menuState} gdkmonitor={gdkmonitor} />
             </box>
         </box>
     )

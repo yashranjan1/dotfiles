@@ -23,6 +23,7 @@ export default function ControlCenter({ gdkmonitor, menuState }: WindowCustomPro
                 className={"control-center-box shadow"} 
                 vertical
                 spacing={10}
+                vexpand={true}
             >
                 <box>
                     <ProfileCard />
@@ -32,9 +33,9 @@ export default function ControlCenter({ gdkmonitor, menuState }: WindowCustomPro
                     <AudioSliders menuState={menuState} gdkmonitor={gdkmonitor} />
                 </box>
                 <box>
-                    <Options />
+                    <Options menuState={menuState} gdkmonitor={gdkmonitor} />
                 </box>
-                <box>
+                <box vexpand={true}>
                     <MprisPlayers />
                 </box>
             </box>

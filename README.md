@@ -10,11 +10,6 @@ Yash's dotfiles for Arch. Heavy inspiration taken from [Aylur's Dotfiles](https:
 > READ THE [WARNING](#warning) BELOW
 
 
-
-> [!NOTE]  
-> Some features on the ags widgets are not complete and I still need to work on these. See the [WIP checklist](#features-i-want-to-add) below if you want to know what features still need work.
-
-
 ## WARNING
 
 This config uses a script to create and remove a loopback device, which requires su privileges. I have already set this script to not require credentials and I trust it because I wrote it, but you should read the script and allow it to work on your system without credentials as well IF YOU WANT THIS FUNCTIONALITY. If you do not do this your widgets will freeze on clicking the button next to the themeswitcher, and only unfreeze when you restart your system. If you do not want this, comment the component out and the widgets will function normally. The component is called `VirtualCamButton` and is available at `.config/ags/widget/ControlCenter/widget/Options.tsx`.
@@ -28,6 +23,7 @@ You need to have these to make sure everything in my dotfiles works for you.
 - [agsv2](https://github.com/Aylur/ags)
 - [v4l2loopback(for virtual cam for screensharing)](https://wiki.archlinux.org/title/V4l2loopback)
 - gnome-bluetooth-3.0
+- blueberry (for bluetooth)
 - [pywal](https://github.com/dylanaraps/pywal)
 - [grim](https://github.com/emersion/grim)
 - [swappy](https://github.com/jtheoof/swappy)
@@ -63,12 +59,6 @@ You can add themes and wallpapers for those themes to this config. To do this go
         }
     }
 ```
-
-
-## Features I want to add
-
-- [ ] Bluetooth menu
-- [ ] Wifi Menu
 
 ## Issues
 

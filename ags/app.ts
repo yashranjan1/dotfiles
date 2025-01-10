@@ -10,6 +10,8 @@ import CalendarCenter from "@/CalendarCenter/CalendarCenter"
 import NotificationCenter from "@/NotificationCenter/NotificationCenter"
 import { config, theme, themeOpts, wallpaper, wallpaperOpts } from "./variables/theme-variables"
 import VolumeControl from "@/VolumeControl/VolumeControl"
+import WifiMenu from "@/WifiMenu/WifiMenu"
+import NewNetwork from "@/NewNetwork/NewNetwork"
 
 exec(["sass", "./style.scss", "/tmp/style.css"])
 
@@ -79,6 +81,12 @@ App.start({
         })
         App.get_monitors().map(monitor => {
             VolumeControl({ gdkmonitor: monitor, menuState: menuState })
+        })
+        App.get_monitors().map(monitor => {
+            WifiMenu({ gdkmonitor: monitor, menuState: menuState })
+        })
+        App.get_monitors().map(monitor => {
+            NewNetwork({ gdkmonitor: monitor, menuState: menuState })
         })
         NotificationPopups(App.get_monitors()[0])
     },

@@ -18,7 +18,7 @@ export default function VolumeControl({ gdkmonitor, menuState }: WindowCustomPro
             exclusivity={Astal.Exclusivity.NORMAL}
             anchor={Astal.WindowAnchor.TOP |
                 Astal.WindowAnchor.RIGHT}
-            visible={bind(menuState).as(s => s === `volume-control-${gdkmonitor.get_model()}` ? true : false)}
+            visible={bind(menuState).as(s => s === `control-center-button-${gdkmonitor.get_model()}-volume` ? true : false)}
         >
             
             <box className={"volume-control-window shadow"}

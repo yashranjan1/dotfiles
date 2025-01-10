@@ -7,11 +7,13 @@
     border-radius: 7px;
 }
 
-.notif-scroll {
-
+scrollable {
     viewport {
         border: none;
     }
+}
+
+.notif-scroll {
 
     min-height: 300px;    
     min-width: 300px;
