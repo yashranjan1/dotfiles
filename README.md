@@ -40,27 +40,26 @@ Clone the repo in your .config file. To load the ags widgets use ``` SUPER + S``
 
 ## Customising the Ags widgets
 
-You can add themes and wallpapers for those themes to this config. To do this go to `.config/ags/themes.json` and add code in the following format
+Adding themes is a little unintuitive. It is somewhat like Next.js's app router. You need to create a folder in the `.config/theme` folder named after your theme. Then add your 2 folders to it. The first one will be called `Wallpapers` and the second one should be called `Colors`. Place all your wallpapers in `Wallpapers` and files with specific color names in `Colors`. An example can be seen below.
 
 ```
-    {
-        "name": { NAME OF THEME },
-        "wallpapers": [
-            { LIST OF PATHS TO YOUR WALLPAPERS }
-        ],
-        "colors": {
-            "accent": { COLOR },
-            "theme_fg_color": { COLOR },
-            "theme_bg_color": { COLOR },
-            "inactiveWs": { COLOR },
-            "theme_alt_bg_color": { COLOR },
-            "red": { COLOR },
-            "yellow": { COLOR },
-            "green": { COLOR },
-            "purple": { COLOR }"
-        }
-    }
+Gruvbox/
+└── Wallpapers/
+    ├── b-306.jpg
+    ├── chinese-hills.jpg
+└── Colors/
+    ├── accent.#DC9547
+    ├── green.#b8bb26
+    ├── inactiveWs.#979274
+    ├── purple.#d3869b
+    ├── red.#fb4934
+    ├── theme_alt_bg_color.#4C4D4F
+    ├── theme_bg_color.#0E121B
+    ├── theme_fg_color.#c8cbba
+    └── yellow.#fabd2f
 ```
+
+After doing this just reload Ags.
 
 ## Issues
 
