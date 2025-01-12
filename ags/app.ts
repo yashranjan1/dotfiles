@@ -1,6 +1,6 @@
 import { App } from "astal/gtk3"
 import Bar from "@Bar/Bar"
-import { bind, exec, readFileAsync, Variable } from "astal"
+import { bind, exec, execAsync, readFileAsync, Variable } from "astal"
 import PowerMenu from "@Power/PowerMenu"
 import ControlCenter from "@CC/ControlCenter"
 import AppLauncher from "@/AppLauncher/AppLauncher"
@@ -24,9 +24,8 @@ await readFileAsync(`${SRC}/currentTheme.json`).then(data => {
     wallpaper.set(parsed.wallpaper)
 })
 
+await execAsync(`../scripts/theme_generator.sh`).then(async (data) => {
 
-
-await readFileAsync(`${SRC}/themes.json`).then(data => {
     const parsed: Array<Config> = JSON.parse(data)
     config.set(parsed)
 
@@ -43,6 +42,11 @@ const menuState = Variable<string>("none")
 
 App.start({
     requestHandler(request: string, res: (response: any) => void) {
+
+        if (request.startsWith("none")) {
+            menuState.set("none")
+            res("closed!")
+        }
 
         if (request.startsWith("app-launcher")) {
             const newValue: string = "app-launcher-" + App.get_monitors()[Number(request.split("-")[2])].get_model()

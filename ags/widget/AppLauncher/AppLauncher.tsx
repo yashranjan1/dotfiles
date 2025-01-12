@@ -47,7 +47,7 @@ export default function AppLauncher({ gdkmonitor, menuState }: WindowCustomProps
 
 
     return (
-        <window className="AppLauncher"
+        <window className="app-launcher"
             name={`app-launcher-${gdkmonitor.get_model()}`}
             gdkmonitor={gdkmonitor}
             exclusivity={Astal.Exclusivity.IGNORE}
