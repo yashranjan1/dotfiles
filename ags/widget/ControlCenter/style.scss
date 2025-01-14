@@ -37,7 +37,7 @@
 .audio-slider-container {
     padding: 15px 25px 15px 20px;
     border-radius: 7px;
-    background-color: color.adjust($theme_alt_bg_color, $alpha: -0.5);
+    background-color: $theme_alt_bg_color;
 }
 
 .audio-slider{
