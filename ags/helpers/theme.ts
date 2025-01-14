@@ -1,14 +1,14 @@
-import { exec, writeFile } from "astal";
+import { execAsync, writeFileAsync } from "astal";
 import { config, theme, themeOpts, wallpaper, wallpaperOpts } from "../variables/theme-variables";
 import { App } from "astal/gtk3";
 
-const changeWallpaper = ( path: string ) => {
+const changeWallpaper = async( path: string ) => {
     wallpaper.set(path)
-    writeFile(`${SRC}/currentTheme.json`, JSON.stringify({ name: theme.get(), wallpaper: wallpaper.get() }))
-    exec(`../scripts/run_swww.sh ${wallpaper.get()}`)
+    writeFileAsync(`${SRC}/currentTheme.json`, JSON.stringify({ name: theme.get(), wallpaper: wallpaper.get() }))
+    await execAsync(`../scripts/run_swww.sh ${wallpaper.get()}`)
 }
 
-const changeTheme = ( num: number ) => {
+const changeTheme = async ( num: number ) => {
 
     // set variables
     const oldIndex = themeOpts.get().indexOf(theme.get())
@@ -23,7 +23,7 @@ const changeTheme = ( num: number ) => {
     const colors = config.get().find(t => t.name === theme.get())?.colors
 
     // write theme.scss
-    writeFile(`${SRC}/theme.scss`, 
+    await writeFileAsync(`${SRC}/theme.scss`, 
         `$accent: ${colors?.accent};
 $theme_fg_color: ${colors?.theme_fg_color};
 $theme_bg_color: ${colors?.theme_bg_color};
@@ -36,17 +36,17 @@ $purple: ${colors?.purple};`
     )
 
     // apply theme.scss
-    exec(["sass", "./style.scss", "/tmp/style.css"])
+    await execAsync(["sass", "./style.scss", "/tmp/style.css"])
     App.reset_css()
     App.apply_css(`/tmp/style.css`)    
 
     // write currentTheme.json
-    wallpaperOpts.set(config.get().find(t => t.name === theme.get())?.wallpapers as string[])
+    await wallpaperOpts.set(config.get().find(t => t.name === theme.get())?.wallpapers as string[])
 
-    changeWallpaper(wallpaperOpts.get()[0])
+    await changeWallpaper(wallpaperOpts.get()[0])
 
     // update wallpaper and rerun wal
-    exec(`../scripts/run_swww.sh ${wallpaper.get()}`)
+    execAsync(`../scripts/run_swww.sh ${wallpaper.get()}`)
 }
 
 export { changeTheme, changeWallpaper }

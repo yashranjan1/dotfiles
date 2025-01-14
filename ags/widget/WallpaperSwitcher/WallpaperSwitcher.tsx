@@ -1,7 +1,7 @@
-import { bind, exec, writeFile } from "astal";
+import { bind } from "astal";
 import { WindowCustomProps } from "../../types/windowCustomProps";
 import { Astal } from "astal/gtk3";
-import { theme, wallpaper, wallpaperOpts } from "../../variables/theme-variables";
+import { wallpaperOpts } from "../../variables/theme-variables";
 import WallpaperOption from "./widget/WallpaperOption";
 import { changeWallpaper } from "../../helpers/theme";
 
