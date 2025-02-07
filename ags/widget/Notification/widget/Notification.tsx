@@ -84,7 +84,7 @@ export default function Notification(props: Props) {
                     />
                     {n.body && <label
                         className="body"
-                        wrap
+                        truncate
                         useMarkup
                         halign={START}
                         xalign={0}

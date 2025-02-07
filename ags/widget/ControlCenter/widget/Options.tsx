@@ -4,7 +4,6 @@ import { changeTheme } from "../../../helpers/theme";
 import Bluetooth from "gi://AstalBluetooth"
 import Wifi from "gi://AstalNetwork"
 import VirtualCam from "../../../bindings/v4l2loopback";
-import { Gtk } from "astal/gtk3";
 import { WindowCustomProps } from "../../../types/windowCustomProps";
 
 

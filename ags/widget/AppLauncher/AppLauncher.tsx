@@ -3,7 +3,7 @@ import { WindowCustomProps } from "../../types/windowCustomProps";
 import { bind, Variable } from "astal";
 import Apps from "gi://AstalApps"
 
-function AppButton({ app, hide}: { app: Apps.Application, hide: () => void }) {
+function AppButton({ app, hide }: { app: Apps.Application, hide: () => void }) {
     return <button
         className="app-button"
         onClicked={() => {hide(); app.launch() }}>
@@ -26,6 +26,7 @@ function AppButton({ app, hide}: { app: Apps.Application, hide: () => void }) {
         </box>
     </button>
 }
+
 
 export default function AppLauncher({ gdkmonitor, menuState }: WindowCustomProps) {
 
