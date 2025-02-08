@@ -1,11 +1,10 @@
 import { execAsync, writeFileAsync } from "astal";
-import { config, theme, themeOpts, wallpaper, wallpaperOpts } from "../variables/theme-variables";
+import { config, theme, themeOpts } from "../variables/theme-variables";
 import { App } from "astal/gtk3";
 
 const changeWallpaper = async( path: string ) => {
-    wallpaper.set(path)
-    writeFileAsync(`${SRC}/currentTheme.json`, JSON.stringify({ name: theme.get(), wallpaper: wallpaper.get() }))
-    await execAsync(`../scripts/run_swww.sh ${wallpaper.get()}`)
+    writeFileAsync(`${SRC}/currentTheme.json`, JSON.stringify({ name: theme.get() }))
+    await execAsync(`../scripts/run_swww.sh ${path}`)
 }
 
 const changeTheme = async ( num: number ) => {
@@ -41,12 +40,9 @@ $purple: ${colors?.purple};`
     App.apply_css(`/tmp/style.css`)    
 
     // write currentTheme.json
-    await wallpaperOpts.set(config.get().find(t => t.name === theme.get())?.wallpapers as string[])
+    const wallpaperPath = config.get().find(t => t.name === theme.get())?.wallpaper as string
 
-    await changeWallpaper(wallpaperOpts.get()[0])
-
-    // update wallpaper and rerun wal
-    execAsync(`../scripts/run_swww.sh ${wallpaper.get()}`)
+    await changeWallpaper(wallpaperPath)
 }
 
 export { changeTheme, changeWallpaper }

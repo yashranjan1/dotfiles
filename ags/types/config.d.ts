@@ -1,5 +1,5 @@
 interface Config {
     name: string
-    wallpapers: Array<string>
+    wallpaper: string,
     colors: Record<string, string>
 }

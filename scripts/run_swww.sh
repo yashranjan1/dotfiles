@@ -16,4 +16,4 @@ echo "\$wp = $path" >"$config_file"
 wal -i "$path"
 
 # Execute the command with the given path
-swww img "$path" --transition-type center --transition-fps 90 --transition-step 30
+swww img "$path" --transition-type wipe --transition-fps 90 --transition-step 30

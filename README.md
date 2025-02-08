@@ -40,13 +40,11 @@ Clone the repo in your .config file. To load the ags widgets use ``` SUPER + S``
 
 ## Customising the Ags widgets
 
-Adding themes is a little unintuitive. It is somewhat like Next.js's app router. You need to create a folder in the `.config/theme` folder named after your theme. Then add your 2 folders to it. The first one will be called `Wallpapers` and the second one should be called `Colors`. Place all your wallpapers in `Wallpapers` and files with specific color names in `Colors`. An example can be seen below.
+Adding themes is a little unintuitive. It is somewhat like Next.js's app router. You need to create a folder in the `.config/theme` folder named after your theme. Then add your 1 folder and a file to it. The file will be called `Wallpaper.png` (any extension works doesn't NEED to be png) and the folder should be called `Colors`. Your wallper needs to be the file called `Wallpaper.png`, and in `Colors` you will have to place specific files to specify colors. An example can be seen below.
 
 ```
 Gruvbox/
-└── Wallpapers/
-    ├── b-306.jpg
-    ├── chinese-hills.jpg
+└── Wallpapers.png
 └── Colors/
     ├── accent.#DC9547
     ├── green.#b8bb26

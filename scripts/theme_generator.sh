@@ -7,48 +7,60 @@ BASE_DIR="/home/yash/.config/theme"
 echo "["
 
 # Iterate over the themes inside the "theme" folder
+FIRST_THEME=true
 for THEME in "$BASE_DIR"/*; do
     if [ -d "$THEME" ]; then
         THEME_NAME=$(basename "$THEME")
 
+        # Find the wallpaper file inside the theme directory (could be any extension like .png, .jpg, etc.)
+        WALLPAPER_FILE=""
+        for FILE in "$THEME"/*; do
+            if [[ "$FILE" =~ \.(jpg|png|jpeg|gif|bmp)$ ]]; then
+                WALLPAPER_FILE="/home/yash/.config/theme/$THEME_NAME/$(basename "$FILE")"
+                break  # Stop after finding the first wallpaper
+            fi
+        done
+
+        # If it's not the first theme, add a comma before the next object
+        if [ "$FIRST_THEME" = false ]; then
+            echo ","
+        else
+            FIRST_THEME=false
+        fi
+
         # Start the JSON object for this theme
-        echo "    {"
-        echo "        \"name\": \"$THEME_NAME\","
+        echo "  {"
+        echo "    \"name\": \"$THEME_NAME\","
+        echo "    \"wallpaper\": \"$WALLPAPER_FILE\","
+        echo "    \"colors\": {"
 
-        # Add wallpapers
-        echo "        \"wallpapers\": ["
-        WALLPAPER_PATH="$THEME/Wallpapers"
-        WALLPAPERS=()
-        for WALLPAPER in "$WALLPAPER_PATH"/*; do
-            WALLPAPER_NAME=$(basename "$WALLPAPER")
-            FULL_WALLPAPER_PATH="/home/yash/.config/theme/$THEME_NAME/Wallpapers/$WALLPAPER_NAME"
-            WALLPAPERS+=("\"$FULL_WALLPAPER_PATH\"")
-        done
-        echo "            $(
-            IFS=,
-            echo "${WALLPAPERS[*]}"
-        )"
-        echo "        ],"
-
-        # Add colors
-        echo "        \"colors\": {"
+        # Add colors from the Colors directory
         COLOR_PATH="$THEME/Colors"
-        COLORS=()
+        FIRST_COLOR=true
         for COLOR_FILE in "$COLOR_PATH"/*; do
-            COLOR_NAME=$(basename "$COLOR_FILE" | cut -d '.' -f 1)
-            COLOR_VALUE=$(basename "$COLOR_FILE" | cut -d '.' -f 2)
-            COLORS+=("\"$COLOR_NAME\": \"$COLOR_VALUE\"")
-        done
-        echo "            $(
-            IFS=,
-            echo "${COLORS[*]}"
-        )"
-        echo "        }"
+            if [ -f "$COLOR_FILE" ]; then
+                COLOR_NAME=$(basename "$COLOR_FILE" | cut -d '.' -f 1)
+                COLOR_VALUE=$(basename "$COLOR_FILE" | cut -d '.' -f 2)
 
-        # Close the JSON object for this theme
-        echo "    },"
+                # Add a comma for multiple colors
+                if [ "$FIRST_COLOR" = false ]; then
+                    echo ","
+                else
+                    FIRST_COLOR=false
+                fi
+
+                echo -n "      \"$COLOR_NAME\": \"$COLOR_VALUE\""
+            fi
+        done
+
+        # Close the colors object
+        echo
+        echo "    }"
+        echo -n "  }"
     fi
-done | sed '$s/,$//' # Remove trailing comma from the last theme
+done
 
 # Close the JSON array
+echo
 echo "]"
+
