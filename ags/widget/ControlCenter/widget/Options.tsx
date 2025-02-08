@@ -14,9 +14,9 @@ function ThemeSwitcher() {
         >
             <icon icon="pan-start-symbolic"/>
         </button>
-        <label label={bind(theme)}/>
+        <label label={bind(theme)} />
         <button
-            onClick={() => changeTheme(1)}
+        onClick={() => changeTheme(1)}
         >
             <icon icon="pan-end-symbolic"/>
         </button>
