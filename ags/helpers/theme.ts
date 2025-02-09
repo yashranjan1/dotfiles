@@ -1,9 +1,9 @@
 import { execAsync, writeFileAsync } from "astal";
-import { config, theme, themeOpts } from "../variables/theme-variables";
+import { config, split, theme, themeOpts } from "../variables/theme-variables";
 import { App } from "astal/gtk3";
 
 const changeWallpaper = async( path: string ) => {
-    writeFileAsync(`${SRC}/currentTheme.json`, JSON.stringify({ name: theme.get() }))
+    writeFileAsync(`${SRC}/currentTheme.json`, JSON.stringify({ name: theme.get(), split: split.get() }))
     await execAsync(`../scripts/run_swww.sh ${path}`)
 }
 

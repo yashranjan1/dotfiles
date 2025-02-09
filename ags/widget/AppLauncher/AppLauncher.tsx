@@ -2,6 +2,7 @@ import { Astal, Gtk } from "astal/gtk3";
 import { WindowCustomProps } from "../../types/windowCustomProps";
 import { bind, Variable } from "astal";
 import Apps from "gi://AstalApps"
+import { BarSplitter } from "./widget/BarSplitter";
 
 function AppButton({ app, hide }: { app: Apps.Application, hide: () => void }) {
     return <button
@@ -16,15 +17,21 @@ function AppButton({ app, hide }: { app: Apps.Application, hide: () => void }) {
                     xalign={0}
                     label={app.name}
                 />
-                {app.description && <label
-                    className="description"
-                    truncate
-                    xalign={0}
-                    label={app.description}
-                />}
             </box>
         </box>
     </button>
+}
+
+function CommandView(){
+    return (
+        <box hexpand vexpand className={'command-view'} spacing={15}>   
+            <icon icon={"utilities-terminal-symbolic"}/>
+            <box valign={Gtk.Align.CENTER} vertical >
+                <label halign={Gtk.Align.START} label={"This is the command view"} className={"command-head"}/>
+                <label halign={Gtk.Align.START} label={"You can use custom defined commands here"} className={"command-desc"}/>
+            </box>
+        </box>
+    )
 }
 
 
@@ -35,15 +42,24 @@ export default function AppLauncher({ gdkmonitor, menuState }: WindowCustomProps
 
     const apps = new Apps.Apps()
     const text = Variable("")
-    const list = text(text => apps.fuzzy_query(text).slice(0, MAX_ITEMS))
+    const list = text(text => !text.startsWith(":") ? apps.fuzzy_query(text).slice(0, MAX_ITEMS) : [])
+    const commands = text(text => {
+        if (text.startsWith(":")){
+            if (text == ":s") return <BarSplitter />
+            return <CommandView /> 
+        } 
+        return <box /> 
+    })
 
     const hide = () => {
         menuState.set("none")
     }
 
     const onEnter = () => {
-        apps.fuzzy_query(text.get())?.[0].launch()
-        hide();
+        if (!text.get().startsWith(":")) {
+            apps.fuzzy_query(text.get())?.[0].launch()
+            hide();
+        }
     }
 
 
@@ -53,9 +69,12 @@ export default function AppLauncher({ gdkmonitor, menuState }: WindowCustomProps
             gdkmonitor={gdkmonitor}
             exclusivity={Astal.Exclusivity.IGNORE}
             visible={bind(menuState).as(s => s === `app-launcher-${gdkmonitor.get_model()}` ? true : false)}
+            anchor={
+                Astal.WindowAnchor.TOP
+            }
             keymode={Astal.Keymode.ON_DEMAND}
         >
-            <box vertical spacing={10} className={"app-launcher-box shadow"}>
+            <box vertical spacing={25} className={"app-launcher-box shadow"}>
                 <entry
                     onChanged={self => text.set(self.text)}
                     onActivate={self =>{ 
@@ -72,6 +91,7 @@ export default function AppLauncher({ gdkmonitor, menuState }: WindowCustomProps
                             <AppButton app={app} hide={hide} />
                         )
                     }))}
+                    {commands}
                 </box>
             </box>
         </window>

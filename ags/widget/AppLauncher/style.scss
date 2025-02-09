@@ -2,14 +2,14 @@
     background-color: $theme_bg_color;
     padding: 20px;
     border-radius: 7px;
-    margin: 10px 20px;
+    margin: 150px 20px 10px 20px;
     font-size: 16px;
     min-height: 100px;
     min-width: 500px;
 }
 
 .app-button {
-    background-color: $theme_alt_bg_color;
+    background-color: transparent;
     color: $theme_fg_color;
     border-radius: 10px;
     font-size: 24px;
@@ -40,7 +40,7 @@
     background-color: $theme_alt_bg_color;
     color: $theme_fg_color;
     border-radius: 10px;
-    padding: 5px;
+    padding: 5px 10px;
     font-size: 18px;
 
     placeholder {   
@@ -50,4 +50,57 @@
 
 .entry:focus {
     box-shadow: 0 0 0px 2px $inactive-ws;
+}
+
+.command-view {
+    background-color: $accent;
+    color: $theme_bg_color;
+    padding: 20px;
+    border-radius: 10px;
+
+    icon {
+        font-size: 72px;
+    }
+
+    box {
+        .command-head {
+            font-size: 24px;
+        }
+        .command-desc {
+            font-size: 16px;
+        }
+    }
+}
+
+.splitter {
+    background-color: $accent;
+    padding: 20px;
+    border-radius: 10px;
+    color: $theme_bg_color;
+    font-size: 54px;
+
+    icon {
+        font-size: 72px;
+    }
+
+    switch {
+        slider {
+            background-color: $theme_bg_color;
+            .checked {
+                background-color: $accent;
+            }
+        }
+    }
+
+    box {
+        .command-head {
+            font-size: 24px;
+        }
+        .command-desc {
+            font-size: 16px;
+        }
+    }
+    .switch-box{
+        margin: 20px 0;
+    }
 }

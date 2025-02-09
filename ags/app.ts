@@ -7,7 +7,7 @@ import AppLauncher from "@/AppLauncher/AppLauncher";
 import NotificationPopups from "@/Notification/Popups";
 import CalendarCenter from "@/CalendarCenter/CalendarCenter";
 import NotificationCenter from "@/NotificationCenter/NotificationCenter";
-import { config, theme, themeOpts } from "./variables/theme-variables";
+import { config, split, theme, themeOpts } from "./variables/theme-variables";
 import VolumeControl from "@/VolumeControl/VolumeControl";
 import WifiMenu from "@/WifiMenu/WifiMenu";
 import NewNetwork from "@/NewNetwork/NewNetwork";
@@ -18,8 +18,9 @@ exec(["sass", "./style.scss", "/tmp/style.css"]);
 // config creation
 
 await readFileAsync(`${SRC}/currentTheme.json`).then((data) => {
-  const parsed: { name: string; wallpaper: string } = JSON.parse(data);
+  const parsed: { name: string; split: boolean } = JSON.parse(data);
   theme.set(parsed.name);
+  split.set(parsed.split);
 });
 
 await execAsync(`../scripts/theme_generator.sh`).then(async (data) => {
@@ -49,12 +50,6 @@ App.start({
       }
       menuState.set(newValue);
       res("opened!");
-    }
-    if (request === "split"){
-        splitBar(true)
-    }
-    if (request === "connect"){
-        splitBar(false)
     }
   },
   css: "/tmp/style.css",
