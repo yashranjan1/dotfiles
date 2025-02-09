@@ -1,6 +1,5 @@
 import { bind, Variable } from "astal"
 import { GLib } from "astal"
-import { App } from "../../../../../../../usr/share/astal/gjs/gtk3"
 import { DateProps } from "../../../types/dateProps"
 
 
@@ -10,7 +9,7 @@ function Date({ format = "%-k:%M", monitor, state }: DateProps) {
         GLib.DateTime.new_now_local().format(format)!)
 
 
-    return <button className={bind(state).as(s => s === `date-${monitor}` ? "bg-active date-btn" : "date-btn")}
+    return <button className={bind(state).as(s => s === `date-${monitor}` ? "date-btn bar-item-active" : "date-btn")}
         onClick={() => {
             if (state.get() === `date-${monitor}`) {
                 state.set("none")

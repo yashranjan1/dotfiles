@@ -8,9 +8,10 @@ return {
     },
     keys = {
 	{ "<leader><leader>", "<cmd>Telescope find_files<cr>", desc = "Find File", mode = "n" },
-	{ "<leader>m", "<cmd>Mason<cr>", desc = "Find File", mode = "n" },
-	{ "<leader>fn", "<cmd>tabedit<cr>", desc = "New blank file", mode = "n" },
-	{ "<leader>bd", "<cmd>tabclose<cr>", desc = "Close tab", mode = "n" },
+	{ "<leader>bf", "<cmd>Telescope buffers<cr>", desc = "Find Buffer", mode = "n" },
+	{ "<leader>m", "<cmd>Mason<cr>", desc = "Mason", mode = "n" },
+	{ "<leader>bd", "<cmd>bd<cr>", desc = "Close buffer", mode = "n" },
+	{ "<leader>bn", "<cmd>enew<cr>", desc = "New empty buffer", mode = "n" },
 	{ "<leader>e", "<cmd>Neotree filesystem toggle right<cr>", desc = "File tree", mode = "n" },
     },
 }

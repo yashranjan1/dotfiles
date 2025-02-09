@@ -4,7 +4,6 @@ import { exec, execAsync, readFileAsync, Variable } from "astal";
 import PowerMenu from "@Power/PowerMenu";
 import ControlCenter from "@CC/ControlCenter";
 import AppLauncher from "@/AppLauncher/AppLauncher";
-import WallpaperSwitcher from "@/WallpaperSwitcher/WallpaperSwitcher";
 import NotificationPopups from "@/Notification/Popups";
 import CalendarCenter from "@/CalendarCenter/CalendarCenter";
 import NotificationCenter from "@/NotificationCenter/NotificationCenter";
@@ -12,6 +11,7 @@ import { config, theme, themeOpts } from "./variables/theme-variables";
 import VolumeControl from "@/VolumeControl/VolumeControl";
 import WifiMenu from "@/WifiMenu/WifiMenu";
 import NewNetwork from "@/NewNetwork/NewNetwork";
+import { splitBar } from "./helpers/bar";
 
 exec(["sass", "./style.scss", "/tmp/style.css"]);
 
@@ -49,6 +49,12 @@ App.start({
       }
       menuState.set(newValue);
       res("opened!");
+    }
+    if (request === "split"){
+        splitBar(true)
+    }
+    if (request === "connect"){
+        splitBar(false)
     }
   },
   css: "/tmp/style.css",

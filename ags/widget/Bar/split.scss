@@ -1,0 +1,83 @@
+.shadow {
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+}
+
+window.Bar {
+    background: transparent;
+    font-weight: 700;
+
+    >centerbox {
+        color: $theme_fg_color;
+        margin: 10px 20px;
+        border-radius: 50px;
+    }
+}
+
+icon.Logo {
+    color: $accent;
+    font-size: 20px;
+}
+
+.bar-item{
+    background-color: $theme_bg_color;
+    padding: 5px 15px 2px;
+    border-bottom: solid 5px $accent;
+    border-radius: 7px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+}
+
+.workspace-tab{
+    min-height: 10px;
+    min-width: 10px;
+    border-radius: 5px;
+    padding: 0px;
+    background-color: $inactive-ws;
+    margin: 10px 2px;
+}
+
+.focused {
+    background-color: $accent;
+    padding: 0px 15px;
+}
+
+.focused-client {
+    font-size: 14px;
+    margin: 0px 10px;
+}
+
+.date-btn {
+    background-color: $theme_bg_color;
+    border-bottom: solid 5px $accent;
+    border-radius: 7px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+    color: $theme_fg_color;
+    margin: 0px;
+
+    .date {
+        font-weight: bolder;
+        font-size: 15px;
+    }
+}
+
+.control-center-btn {
+    background-color: $theme_bg_color;
+    border-bottom: solid 5px $accent;
+    border-radius: 7px;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.5);
+    color: $theme_fg_color;
+    background-color: $theme_bg_color;
+    margin: 0px 0px 0px 10px;
+    padding: 3px 10px;
+    font-size: 18px;
+}
+
+.bar-item-active {
+    background-color: $accent;
+    color: $theme_bg_color;
+    border-bottom: solid 5px $theme_bg_color;
+}
+
+.bg-active {
+    background-color: $accent;
+    color: $theme_bg_color;
+}
