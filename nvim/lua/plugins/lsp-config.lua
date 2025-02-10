@@ -9,12 +9,23 @@ return {
 	    "williamboman/mason-lspconfig.nvim",
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "ruff", "lua_ls", "ts_ls" }
+                ensure_installed = { "lua_ls", "ts_ls", "pyright" }
             })
         end,
 	},
 	{
 		"neovim/nvim-lspconfig",
+        opts = function ()
+            local ret = {
+                diagnotics = {
+                    underline = true,
+                    update_in_insert = true,
+                }
+            }
+
+            return ret
+            
+        end,
 		config = function()
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
 			local lspconfig = require("lspconfig")
@@ -24,7 +35,7 @@ return {
 			lspconfig.ts_ls.setup({
                 capabilities = capabilities
             })
-			lspconfig.ruff.setup({
+			lspconfig.pyright.setup({
                 capabilities = capabilities
             })
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})

@@ -1,4 +1,4 @@
-import { App, Astal, Gdk, Gtk } from "astal/gtk3";
+import { App, Astal, Gtk } from "astal/gtk3";
 import Arch from "@Bar/Logo";
 import Workspaces from "@Bar/Workspaces";
 import Date from "@Bar/Date";
@@ -6,6 +6,7 @@ import ControlCenter from "@Bar/ControlCenter";
 import PowerMenu from "@Bar/PowerMenu";
 import { WindowCustomProps } from "../../types/windowCustomProps";
 import Notifications from "./widget/Notifications";
+import HyprPicker from "./widget/HyprPicker";
 
 export default function Bar({ gdkmonitor, menuState }: WindowCustomProps) {
     return (
@@ -34,6 +35,7 @@ export default function Bar({ gdkmonitor, menuState }: WindowCustomProps) {
                     <Date monitor={`${gdkmonitor.get_model()}`} state={menuState} />
                 </box>
                 <box hexpand halign={Gtk.Align.END}>
+                    <HyprPicker />
                     <Notifications
                         monitor={`${gdkmonitor.get_model()}`}
                         state={menuState}
