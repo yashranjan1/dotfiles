@@ -2,7 +2,8 @@ import { execAsync } from "astal"
 
 export default function HyprPicker(){
     const onClick = async () => {
-        await execAsync('hyprpicker -a')
+        const color = await execAsync('../scripts/color_picker.sh')
+        print(color)
     }
     
     return  <button 

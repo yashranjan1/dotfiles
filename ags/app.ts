@@ -11,7 +11,6 @@ import { config, split, theme, themeOpts } from "./variables/theme-variables";
 import VolumeControl from "@/VolumeControl/VolumeControl";
 import WifiMenu from "@/WifiMenu/WifiMenu";
 import NewNetwork from "@/NewNetwork/NewNetwork";
-import { splitBar } from "./helpers/bar";
 
 exec(["sass", "./style.scss", "/tmp/style.css"]);
 
