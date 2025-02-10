@@ -15,11 +15,29 @@ eventbox.Notification {
     .popup{
         background-color: $theme_bg_color;
         min-width: 300px;
+        .image {
+            border: 1px solid gtkalpha($theme_fg_color, .02);
+            margin-right: .5rem;
+            border-radius: 9px;
+            min-width: 100px;
+            min-height: 100px;
+            background-size: cover;
+            background-position: center;
+        }
     }
 
     .stack{
-        background-color: $theme_alt_bg_color;
-        min-width: 500px;
+        background-color: gtkalpha($theme_alt_bg_color, .3);
+        min-width: 330px;
+        .image {
+            border: 1px solid gtkalpha($theme_fg_color, .02);
+            margin-right: .5rem;
+            border-radius: 9px;
+            min-width: 50px;
+            min-height: 50px;
+            background-size: cover;
+            background-position: center;
+        }
     }
 
     &:last-child>box {
@@ -94,15 +112,6 @@ eventbox.Notification {
             color: gtkalpha($theme_fg_color, 0.8);
         }
 
-        .image {
-            border: 1px solid gtkalpha($theme_fg_color, .02);
-            margin-right: .5rem;
-            border-radius: 9px;
-            min-width: 100px;
-            min-height: 100px;
-            background-size: cover;
-            background-position: center;
-        }
     }
 
     .actions {

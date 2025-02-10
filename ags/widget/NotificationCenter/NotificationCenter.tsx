@@ -12,8 +12,11 @@ export default function NotificationCenter({ gdkmonitor, menuState }: WindowCust
         className="NotificationCenter"
         name={`notification-center`}
         exclusivity={Astal.Exclusivity.NORMAL}
-        anchor={Astal.WindowAnchor.TOP |
-            Astal.WindowAnchor.RIGHT}
+        anchor={
+            Astal.WindowAnchor.TOP |
+            Astal.WindowAnchor.RIGHT |
+            Astal.WindowAnchor.BOTTOM
+        }
         visible={bind(menuState).as(s => s === `notification-center-${gdkmonitor.get_model()}` ? true : false)}
         >
         <box className={"notification-center-box shadow"}>
@@ -29,7 +32,7 @@ export default function NotificationCenter({ gdkmonitor, menuState }: WindowCust
                                 })
                             }}
                         >
-                            <label label={"Clear all"}  />
+                            <icon icon={"edit-delete-symbolic"} />
                         </button>
                     </box>
                     <scrollable hscroll={Gtk.PolicyType.NEVER} hexpand className={"notif-scroll"}>

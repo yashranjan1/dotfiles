@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .calendar-center-box {
     background-color: $theme_bg_color;
     border-radius: 10px;
@@ -19,7 +21,7 @@
 }
 
 .calendar:indeterminate {
-    color: $theme_bg_color;
+    color: color.adjust($theme_fg_color, $alpha: -0.7);
 }
 
 .calendar.highlight, .calendar.header, .calendar.button {
