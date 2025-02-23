@@ -1,4 +1,7 @@
 Code 
+ags/currentTheme.json
+ags/theme.scss
+hypr/options.conf
 Code - OSS/ 
 warp-terminal
 dconf/
@@ -40,3 +43,4 @@ simple-update-notifier/
 kwalletrc
 envman/
 tmux/
+nvim.old/
