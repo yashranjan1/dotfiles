@@ -192,6 +192,11 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- Oil.nvim Binds
 vim.keymap.set('n', '<leader>o', '<CMD>Oil<CR>', { desc = 'Opens [O]il.nvim window' })
 
+-- Some custom diagnostic message opts
+vim.keymap.set('n', '<leader>eo', vim.diagnostic.open_float, { desc = '[O]pen diagnostic window' })
+vim.keymap.set('n', '<leader>en', vim.diagnostic.goto_next, { desc = '[N]ext diagnostic message' })
+vim.keymap.set('n', '<leader>ep', vim.diagnostic.goto_next, { desc = '[P]revious diagnostic message' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -334,6 +339,7 @@ require('lazy').setup({
         { '<leader>s', group = '[S]earch' },
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle' },
+        { '<leader>e', group = '[E]rror Diagnostics' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
     },
