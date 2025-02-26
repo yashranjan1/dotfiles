@@ -1,4 +1,5 @@
 Code 
+mozc/
 ags/currentTheme.json
 ags/theme.scss
 hypr/options.conf
@@ -44,3 +45,6 @@ kwalletrc
 envman/
 tmux/
 nvim.old/
+fcitx/
+fcitx5/
+ibus/
