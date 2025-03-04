@@ -31,6 +31,7 @@ You need to have these to make sure everything in my dotfiles works for you.
 - [swappy](https://github.com/jtheoof/swappy)
 - [slurp](https://github.com/emersion/slurp)
 - [swww](https://github.com/LGFae/swww)
+- Fcitx5 (Optional)
 - JetBrains Mono NF (optional)
 - Oh-my-zsh (optional)
 
